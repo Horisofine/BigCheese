@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="test.css">
@@ -10,54 +11,52 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    <body>
-        <main>
-            <section class="sidebar">
-                <!-- First inner container  -->
-                <section id = "main">
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="" style="font-size: 15px;">Welcome</a></li>  
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Second inner container -->
-                <section id ="main">
-                    <div>
-                        <!-- Links to be to attached-->
-                        <ul>
-                            <li><a href="index.html">Create Order</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="orders.html">Orders</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="pending.html">Pending Orders</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="supplier_list.html">Supplier List</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="">Logout</a></li>  
-                        </ul>
-                    </div>
-                </section>
+<body>
+    <main>
+        <section class="sidebar">
+            <!-- First inner container  -->
+            <section id = "main">
+                <div>
+                    <ul>
+                        <!-- Potentially a link to the home page -->
+                        <li><a href="index.html">Create Order</a></li>  
+                    </ul>
+                </div>
             </section>
 
-            <section class="maincontent">
+            <!-- Second inner container -->
+        <section id ="main">
+            <div>
+                <ul>
+                    <li><a href="orders.html">Orders</a></li>  
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="pending.html">Pending Orders</a></li>  
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="supplier_list.html">Supplier List</a></li>  
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="customerLogin.html">Logout</a></li>  
+                </ul>
+            </div>
+            </section>
+        </section>
+
+
+
+
+
+        <section class="maincontent">
                 <div>
                     <table>
                         <tr>
@@ -70,12 +69,15 @@
                                     <option class="content">By ID</option>
                                     <option class="content">By [...]</option>
                                 </select>
+                            <td>
                                 <input type="text" placeholder="Search..." class="srchBar">
+                            </td>
+                            <td>
                                 <button type="submit" class="srchBtn"><i class="fa fa-search"></i></button>
                             </td>
-                            <td class="showResults">Showing (number of) Results</td>
+                            <td class="showResults" id = "supplier" >Showing (number of) Results</td>
                             <td>
-                                <label class="sortBy">Sort by:</label>
+                                <label class="sortBy" id = "supplier" >Sorted by:</label>
                                 <select class="drpdwnSrch">
                                     <option class="content">Featured</option>
                                     <option class="content">Price: Low to High</option>
@@ -88,45 +90,48 @@
                     </table>
                 </div>
 
+            <div>
+                <table class="itemTable">
+                    <tr>
+                        <th>Pending Order Number</th>
+                        <th>Supplier Name</th>
+                        <th>Order ID</th>
+                        <th>Total Units</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Android</td>
+                        <td>O_123</td>
+                        <td>1</td>
+                        <td>2034$</td>
+                        <td>In progress</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="sidebar">
+            <!-- First inner container  -->
+            <section id = "main">
                 <div>
-                    <table class="itemTable">
-                        <tr>
-                            <th>Pending Order Number</th>
-                            <th>Supplier</th>
-                            <th>Order ID</th>
-                            <th>Total Units</th>
-                            <th>Total</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Supplier 2</td>
-                            <td>O_123</td>
-                            <td>2400</td>
-                            <td>2034$</td>
-                            <td>In progress</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <!-- Potentially a link to the home page -->
+                        <li><a href="cart.html">Cart</a></li>  
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <!-- Potentially a link to the home page -->
+                        <li><a href="">Account</a></li>  
+                    </ul>
                 </div>
             </section>
 
-            <section class="sidebar">
-                <!-- First inner container  -->
-                <section id = "main">
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="" style="font-size: 15px;">Cart</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="" style="font-size: 15px;">Account</a></li>  
-                        </ul>
-                    </div>
-                </section>
-            </section>
-        </main>
-    </body>
+        </section>
+    </main>
+
+</body>
+
 </html>

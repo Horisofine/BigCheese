@@ -2,79 +2,169 @@
     margin: 0;
 }
 
+
+
 /* Youssef CSS */
+
 body {
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
 }
+
 table {
     width: 100%;
     text-align: center;
     font-family: Arial;
 }
 
-table th {
-    border-bottom: 3px solid #795bc5;
+
+table th  {
+    letter-spacing: 0.1em;
+    height: 30px;
+    border-radius: 0px;
+    border-bottom: 3px solid purple;
+    color: rgb(167, 168, 174);
+}
+
+table th:hover{
+    border-bottom: #ebe2ea;
+}
+
+table td {
+    height: 15px;
+    text-align: center;
+    font-family: Arial;
+    font-size: small;
+    letter-spacing: 0.25em;
+
+}
+
+table tr :hover {
+    color: rgb(120, 46, 109);
+}
+
+#supplier {
+    color: rgb(0, 0, 0);
+}
+
+.add {
+    background-color: rgb(255, 255, 255);
+    padding: 5px 12px;
+    border: none;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgb(9, 9, 9);
 }
 
 
-.filterBtn {
-    background-color: #795bc5;
+
+.products {
+    text-decoration: none;
+}
+
+
+
+.create-login{
+    padding-bottom:25px;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+  
+.form-title{
+    text-align: center;
+    font-family: Arial;
+    margin-bottom:30px;
+    margin-top:15px;
+}
+
+.label-name{
+    text-align:left;
+}
+
+.filterBtn  {
+    background-color: purple;
     color: white;
-    border: 2px solid #795bc5;
-    transition-duration: 0.5s;
+    border: 2px solid purple;
+    transition-duration: 0.4s;
     border-radius: 15px;
-    padding: 8px 8px;
+    padding: 10px 15px;
     font-size: 13px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
+
+
+
 .filterBtn:hover {
     background-color: white;
-    color: #795bc5;
-    border: 2px solid #795bc5;
+    color: purple;
+    border: 2px solid purple;
 }
+
+
+.checkout {
+    color: purple;
+    border: 2px solid purple;
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+
 
 
 .drpdwnSrch {
     background-color: white;
-    color: #795bc5;
-    padding: 6px 6px;
+
+    color: purple;
+    padding: 8px 8px;
     font-size: 13px;
-    border: 2px solid #795bc5;
+    border: 2px solid purple;
     border-radius: 15px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+
 }
 
 .srchBar {
-    padding: 8px 8px;
+    padding: 10px 10px;
     border-radius: 15px;
-    border-color: #795bc5;
+    border-color: purple;
 }
 
 .srchBtn {
     width: auto;
-    padding: 8px 8px;
-    background: #795bc5;
+    padding: 10px 15px;
+    background: purple;
     color: white;
     font-size: 15px;
-    border: 2px solid #795bc5;
+    border: 2px solid purple;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
     border-radius: 15px;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 }
 
 .srchBtn:hover {
     background-color: white;
-    color: #795bc5;
-    border: 2px solid #795bc5;
+    color: purple;
+    border: 2px solid purple;
 }
 .showResults {
     color: grey;
-    font-size: 11px;
+    font-size: 14px;
 }
 .sortBy {
     color: grey;
-    font-size: 11px;
+    font-size: 14px;
 }
 .itemTable {
     padding-top: 20px;
@@ -85,15 +175,15 @@ table th {
 }
 .outBtn {
     border-radius: 15px;
-    background-color: #795bc5;
+    background-color: purple;
     color: white;
     transition-duration: 0.4s;
-    border: 2px solid #795bc5;
+    border: 2px solid purple;
 }
 .outBtn:hover {
     cursor: pointer;
     background-color: white;
-    color: #795bc5;
+    color: purple;
 }
 
 /* Youssef CSS */
@@ -129,23 +219,9 @@ table th {
     display: flex;
     justify-content: flex-end;
     font-family: Arial;
-    font-size: 10px;
+    font-size: 13px;
     text-transform: uppercase;
-    border-left: 3px solid transparent;
-    transition-duration: 0.5s;
-}
-
-.sidebar div ul li a {
-    text-decoration: none;
-    letter-spacing: 0.3em;
-    color: rgb(211, 195, 195);
-    display: flex;
-    justify-content: flex-end;
-    font-family: Arial;
-    font-size: 10px;
-    text-transform: uppercase;
-    border-left: 3px solid transparent;
-    transition-duration: 0.5s;
+    border-left: 10px solid transparent;
 }
 
 .sidebar div ul a:hover{
@@ -153,7 +229,7 @@ table th {
 }
 
 .sidebar div ul li a:hover {
-    border-left-color: #795bc5;
+    border-left-color: purple;
 } 
 
 main {
@@ -165,10 +241,10 @@ main {
 
 main .sidebar {
     background-color: #000;
-    flex: 1 1 50px;
+    flex: 1 1 60px;
 }
 main .maincontent {
-    padding-top: 10px;
+    padding-top: 50px;
     text-transform: uppercase;
     padding-left: 40px;
     padding-right: 40px;
@@ -179,3 +255,4 @@ main .maincontent {
 }
 
 /* SideBar CSS */
+

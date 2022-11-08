@@ -1,0 +1,135 @@
+body{
+    font-family: Arial;
+    background: linear-gradient(to top,white,#9368E9,#943bea)!important;
+    background-size: cover;
+}
+
+.bottom-tag{
+    color:white;
+    text-decoration: none;
+}
+.bottom-tag:hover{
+    color:#ff9500;
+    transition: all ease 500ms;
+    transform: scale(1.25);
+    font-size:20px;
+    
+}
+input{
+    margin-bottom: 8px;
+}
+
+/* .login-card{
+    text-align: center;
+    height: 75%;
+    margin-left:25%;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 7px 12px #ff9500;
+    background-color: white;
+} */
+.form-title{
+    font-family: 'Bebas Neue', cursive ;
+    margin-bottom:30px;
+    margin-top:15px;
+}
+
+.submit-button, .create-btn{
+    margin-bottom: 25px;
+    margin-top:25px;
+    background-color:black !important;
+    color: white !important;
+}
+.submit-button:hover{
+    
+    transition: all ease 500ms;
+    transform: scale(1.25);
+    color:black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+.create-btn:hover{
+    transition: all ease 500ms;
+    transform: scale(1.25);
+    color:black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+submit-button:after{
+    color:red !important;
+}
+
+.input-login{
+    margin:25px;
+    font-size: large;
+}
+
+.header-row{
+    text-shadow: 2px 5px black;
+    color:white;
+    font-family: 'Ubuntu', sans-serif;
+    padding:50px;
+    text-align: center;
+    border: 100px;
+}
+
+#footer{
+    padding-bottom:135px;
+}
+#footer, #supplier-footer {
+    font-family: 'Ubuntu', sans-serif;
+   padding-top: 15px;
+  }
+  #supplier-footer{
+    padding-bottom:170px;
+  }
+ 
+  .bottom-footer {
+    padding-top:125px;
+    text-align: center;
+  }
+
+  .employee-login{
+    margin-top:100px;
+    margin-right:25px;
+    width: 35%;
+    text-align:right;
+  }
+
+  /* Supplier login page */
+
+  .supplier-login, .login-card{
+    transition: all ease 1000ms;
+    text-align: center;
+    height: 75%;
+    margin-left:25%;
+    border: 1px solid;
+    margin-top: 75px;
+    padding: 10px;
+    /* box-shadow: 7px 12px #ff9500; */
+    background-color: white;
+  }
+  .supplier-login:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 10px 11px #ff9500;
+     /* box-shadow: 7px 12px  */
+    
+  }
+  .login-card:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 10px 11px #ff9500;
+  }
+
+  /* Create Account */
+
+  .create-login{
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+  label{
+    width: 125px;
+    display: inline-block;
+    text-align:left;
+  }
