@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Horisofine/BigCheese/issues"
   },
-  "homepage": "https://github.com/Horisofine/BigCheese#readme"
+  "homepage": "https://github.com/Horisofine/BigCheese#readme",
+  "dependencies": {
+    "mongodb": "^4.11.0"
+  }
 }
