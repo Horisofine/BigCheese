@@ -2,50 +2,38 @@
     margin: 0;
 }
 
-
-
 /* Youssef CSS */
-
 body {
     background-color: rgb(255, 255, 255);
 }
-
 table {
     width: 100%;
     text-align: center;
     font-family: Arial;
 }
-
-
 table th  {
     letter-spacing: 0.1em;
     height: 30px;
     border-radius: 0px;
-    border-bottom: 3px solid purple;
+    border-bottom: 3px solid #795bc5;
     color: rgb(167, 168, 174);
 }
-
 table th:hover{
     border-bottom: #ebe2ea;
 }
-
 table td {
     height: 15px;
     text-align: center;
     font-family: Arial;
     font-size: small;
     letter-spacing: 0.25em;
-
 }
-
 table tr :hover {
-    color: rgb(120, 46, 109);
+    color: black;
 }
-
 #supplier {
     color: rgb(0, 0, 0);
 }
-
 .add {
     background-color: rgb(255, 255, 255);
     padding: 5px 12px;
@@ -53,118 +41,93 @@ table tr :hover {
     letter-spacing: 0.1em;
     border-bottom: 1px solid rgb(9, 9, 9);
 }
-
-
-
 .products {
     text-decoration: none;
 }
-
-
-
 .create-login{
     padding-bottom:25px;
     text-align: center;
     margin-left: auto;
     margin-right:auto;
 }
-
-  
 .form-title{
     text-align: center;
     font-family: Arial;
     margin-bottom:30px;
     margin-top:15px;
 }
-
 .label-name{
     text-align:left;
 }
-
-.filterBtn  {
-    background-color: purple;
+.filterBtn {
+    background-color: #795bc5;
     color: white;
-    border: 2px solid purple;
-    transition-duration: 0.4s;
+    border: 2px solid #795bc5;
+    transition-duration: 0.5s;
     border-radius: 15px;
-    padding: 10px 15px;
-    font-size: 13px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-
-
-.filterBtn:hover {
-    background-color: white;
-    color: purple;
-    border: 2px solid purple;
-}
-
-
-.checkout {
-    color: purple;
-    border: 2px solid purple;
-    transition-duration: 0.4s;
-    border-radius: 15px;
-    padding: 10px 15px;
-    font-size: 13px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-
-
-
-
-.drpdwnSrch {
-    background-color: white;
-
-    color: purple;
     padding: 8px 8px;
     font-size: 13px;
-    border: 2px solid purple;
+    cursor: pointer;
+}
+.filterBtn:hover {
+    background-color: white;
+    color: #795bc5;
+    border: 2px solid #795bc5;
+}
+.checkout {
+    color: #795bc5;
+    border: 2px solid #795bc5;
+    transition-duration: 0.4s;
     border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 13px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-
-
 }
-
-.srchBar {
-    padding: 10px 10px;
+.drpdwnSrch {
+    background-color: white;
+    color: #795bc5;
+    padding: 6px 6px;
+    font-size: 13px;
+    border: 2px solid #795bc5;
     border-radius: 15px;
-    border-color: purple;
+    cursor: pointer;
 }
-
-.srchBtn {
+.srchBar {
+    padding: 8px 8px;
+    border-radius: 15px;
+    border-color: #795bc5;
+}
+.add-row{
+    width:15%;
+}
+.srchBtn, .add-row {
     width: auto;
-    padding: 10px 15px;
-    background: purple;
+    padding: 8px 8px;
+    background: #795bc5;
     color: white;
     font-size: 15px;
-    border: 2px solid purple;
+    border: 2px solid #795bc5;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
     border-radius: 15px;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
-
-.srchBtn:hover {
+.srchBtn:hover, .add-row:hover{
     background-color: white;
-    color: purple;
-    border: 2px solid purple;
+    color: #795bc5;
+    border: 2px solid #795bc5;
 }
 .showResults {
     color: grey;
-    font-size: 14px;
+    font-size: 10px;
+    letter-spacing: 0em;
 }
 .sortBy {
     color: grey;
-    font-size: 14px;
+    font-size: 11px;
+    letter-spacing: 0em;
 }
 .itemTable {
     padding-top: 20px;
@@ -175,17 +138,16 @@ table tr :hover {
 }
 .outBtn {
     border-radius: 15px;
-    background-color: purple;
+    background-color: #795bc5;
     color: white;
     transition-duration: 0.4s;
-    border: 2px solid purple;
+    border: 2px solid #795bc5;
 }
 .outBtn:hover {
     cursor: pointer;
     background-color: white;
-    color: purple;
+    color: #795bc5;
 }
-
 /* Youssef CSS */
 
 
@@ -203,7 +165,6 @@ table tr :hover {
 
 .sidebar div li {
     list-style: none;
-
 }
 
 .sidebar div {
@@ -221,7 +182,8 @@ table tr :hover {
     font-family: Arial;
     font-size: 13px;
     text-transform: uppercase;
-    border-left: 10px solid transparent;
+    border-left: 5px solid transparent;
+    transition-duration: 0.5s;
 }
 
 .sidebar div ul a:hover{
@@ -229,7 +191,7 @@ table tr :hover {
 }
 
 .sidebar div ul li a:hover {
-    border-left-color: purple;
+    border-left-color: #795bc5;
 } 
 
 main {
@@ -237,11 +199,12 @@ main {
     margin: 0 auto;
     height: 1000px;
     display: flex;
+    text-align: right;
 }
 
 main .sidebar {
     background-color: #000;
-    flex: 1 1 60px;
+    flex: 1 1 150px;
 }
 main .maincontent {
     padding-top: 50px;
@@ -251,8 +214,89 @@ main .maincontent {
     gap: 2%;
     display: flex;
     flex-direction: column;
-    flex: 3 1 500px;
+    flex: 3 1 600px;
 }
 
 /* SideBar CSS */
 
+/* account page CSS */
+.h2Acc {
+    letter-spacing: 0.3em;
+    text-decoration: none;
+    font-family: Arial;
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 282px;
+    border-bottom: 3px solid #795bc5;
+}
+.img {
+    width: 30%;
+    height: 30%;
+    border-radius: 15px;
+}
+.infoDiv {
+    background-color: white;
+    width: 60%;
+    border-radius: 15px;
+    border: 2px solid #795bc5;
+    padding-left: 100px;
+    padding-right: 120px;
+}
+.userInfoTable {
+    padding: 30px 30px;
+}
+.upload {
+    font-size: 12px;
+    letter-spacing: 0em;
+}
+.accEditBtn {
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: 2px solid lightgray;
+    transition-duration: 0.5s;
+}
+.accEditBtn:hover {
+    background-color: white;
+    border: 2px solid #795bc5;
+    cursor: pointer;
+}
+.tdImg {
+    height: auto;
+    padding-right: 60px;
+}
+/* account page CSS */
+
+/*Supplier row adding */
+
+.client-order{
+    transition: ease all 600ms;
+
+}
+
+.client-order:hover{
+    transform: scale(1.01);
+    border-color:grey;
+    box-shadow: 5px 10px 10px black;
+    border-radius:15px;
+}
+
+
+.delete-row{
+    width: 25%;
+    margin-top:125px;
+    padding: 8px 8px;
+    background: #795bc5;
+    color: white;
+    font-size: 15px;
+    border: 2px solid #795bc5;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-radius: 15px;
+    transition-duration: 0.5s;
+}
+.delete-row:hover{
+    background-color: white;
+    color: #795bc5;
+    border: 2px solid #795bc5;
+
+}

@@ -22,19 +22,13 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="supplier_products.html">Products List</a></li>  
+                        <li><a href="supplier_products.html">Add Product</a></li>  
                     </ul>
                 </div>
             </section>
 
             <!-- Second inner container -->
             <section id ="main">
-                <div>
-                    <!-- Links to be to attached-->
-                    <ul>
-                        <li><a href="add_product.html">Add Products</a></li>  
-                    </ul>
-                </div>
                 <div>
                     <ul>
                         <li><a href="edit_product.html">Edit Product</a></li>  
@@ -53,10 +47,6 @@
                 </section>
         </section>
 
-
-
-
-
         <section class="maincontent">
             <div>
                 <table>
@@ -70,15 +60,12 @@
                                 <option class="content">By ID</option>
                                 <option class="content">By [...]</option>
                             </select>
-                        <td>
                             <input type="text" placeholder="Search..." class="srchBar">
-                        </td>
-                        <td>
                             <button type="submit" class="srchBtn"><i class="fa fa-search"></i></button>
                         </td>
-                        <td class="showResults"  id = "supplier">Showing (number of) Results</td>
+                        <td class="showResults">Showing (number of) Results</td>
                         <td>
-                            <label class="sortBy"  id = "supplier">Sorted by:</label>
+                            <label class="sortBy">Sort by:</label>
                             <select class="drpdwnSrch">
                                 <option class="content">Featured</option>
                                 <option class="content">Price: Low to High</option>
@@ -93,87 +80,26 @@
 
             <div>
                 <table class="itemTable">
+                    <tbody>
                     <tr>
                         <th>Product Name</th>
                         <th>Product ID</th>
                         <th>Price</th>
-                        <th>Quantity in Stock</th>
-                        <th>Availability</th>
+                        <th>Quantity</th>
                     </tr>
                     <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>150</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>150</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>250</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>170</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>55</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>0</td>
-                        <td>Out of Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>50</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>50</td>
-                        <td>In Stock</td>
-
-                    </tr>
-                    <tr>
-                        <td>Product name</td>
-                        <td>1ABC</td>
-                        <td>150$</td>
-                        <td>0</td>
-                        <td>Out of Stock</td>
-
-                    </tr>
+                        <td><input type="text" id="itemName" placeholder="Product Name"></td>
+                        <td><input type="text" id="productId" placeholder="Product ID"></td>
+                        <td><input type="text" id="price" placeholder="Price"></td>
+                        <td><input type="text" id="quantity" placeholder="Quantity"></td>
+                        <td><button type="button" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
+                    </tr> 
+                </tbody>
                 </table>
             </div>
+            
+                <button type="submit" class="delete-row">Remove</button>            
+           
         </section>
 
         <section class="sidebar">
@@ -182,14 +108,15 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="">Account</a></li>  
+                        <li><a href="supplier_account.html">Account</a></li>  
                     </ul>
                 </div>
             </section>
 
         </section>
+        <script src = "order.js"> </script>
     </main>
-
+    
 </body>
 
 </html>

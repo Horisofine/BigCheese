@@ -1,73 +1,28 @@
-// const { MongoClient } = require("mongodb");
-
-// async function main() {
-// 	// we'll add code here soon
-// }
-
-// async function connect() {
-
-//     try {
-//         const uri = "mongodb+srv://admin:adminPassword@bigmindmove.lq18gdi.mongodb.net/?retryWrites=true&w=majority";
-//         const client = new MongoClient(uri);
-
-//         await client.connect();
-//         console.log("connected");
-
-//         await listDatabases(client);
-        
-//         // const db = client.db("BigCheese");
-        
-//         // console.log(db.databaseName);
-//         // const collection = await db.collection("BigCheese.Orders");
-//         // const searchCursor = await collection.find();
-
-//         // if ((await searchCursor.countDocuments()) === 0) {
-//         //     console.log("No documents found!");
-//         //   }
-        
-//         //   await searchCursor.forEach(console.dir);
-//     } 
-//     catch (error) {
-//         console.log(`Something bad happend: ${error}`);
-//     }
-//     finally {
-//         await client.close();
-//     }
+const mongoose = require("mongoose");
+const ProductSchema = require("./dbSchema/Product");
+const OrderInfoSchem = require("./dbSchema/Product");
 
 
-// }
+mongoose.connect("mongodb+srv://admin:adminPassword@bigmindmove.lq18gdi.mongodb.net/BigCheese");
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
-async function main(){
-    /**
-     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
-     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
-     */
-    const uri = "mongodb+srv://admin:adminPassword@bigmindmove.lq18gdi.mongodb.net/?retryWrites=true&w=majority";
- 
-
-    const client = new MongoClient(uri, {useUnifiedTopology: true});
- 
+async function run() {
     try {
-        // Connect to the MongoDB cluster
-        await client.connect();
- 
-        // Make the appropriate DB calls
-        await  listDatabases(client);
- 
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
+        const product = await ProductSchema.create({ 
+            name: "Orange", 
+            price: 1001
+        });
+        console.log(product);
+
+        const orderinf = await OrderInfoSchem.create({
+            ordernum: 3,
+            numitems: 3,
+            products: [product]
+        });
+        console.log(orderinf);
+    }
+    catch (err){
+        console.error(err);
     }
 }
 
-main().catch(console.error);
-
-async function listDatabases(client) {
-    databasesList = await client.db().admin().listDatabases();
-
-    console.log("Databases:");
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
+run();  
