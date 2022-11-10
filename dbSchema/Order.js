@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
-const Orderinfo = require("./OrderInfo");
+const Product = require("./Product").schema;
 
+// Creating a Schema for an order
 const OrderSchema = mongoose.Schema({
 
-    DateOfOrder: Date,
-    ExpectedDelDate: Date,
+    DateOfOrder: String,
+    ExpectedDelDate: String,
     client_name: String,
     status: String,
-    orderInfo: Orderinfo
+    productList: [Product]
+
 })
 
 module.exports = mongoose.model("order", OrderSchema);
