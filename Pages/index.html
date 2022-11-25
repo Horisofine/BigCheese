@@ -73,12 +73,12 @@
             </div>
 
             <div>
-                <table class="itemTable">
+                <!-- <table class="itemTable">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
                         <th>Item Name</th>
                         <th>Product ID</th>
-                        <th>Price</th>
+                        <th id="price">Price</th>
                         <th>Amount in Stock</th>
                         <th>Desired Amount</th>
                     </tr>
@@ -86,8 +86,8 @@
                         <td>Cheese Factory</td>
                         <td>item5</td>
                         <td>#123</td>
-                        <td>4.99$</td>
-                        <td>12</td>
+                        <td id="price">4.99</td>
+                        <td id="quantity">12</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add" >
                         </td>
@@ -97,8 +97,8 @@
                         <td></td>
                         <td>item6</td>
                         <td>#123</td>
-                        <td>4.99$</td>
-                        <td>42</td>
+                        <td id="price">4.99</td>
+                        <td id="quantity">42</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add" >
                         </td>
@@ -119,8 +119,8 @@
                         <td>Cheezers</td>
                         <td>item1</td>
                         <td>#123</td>
-                        <td>4.99$</td>
-                        <td>42</td>
+                        <td id="price">4.99</td>
+                        <td id="quantity">42</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add">
                         </td>
@@ -130,14 +130,14 @@
                         <td></td>
                         <td>item2</td>
                         <td>#123</td>
-                        <td>4.99$</td>
-                        <td>42</td>
+                        <td id="price">4.99</td>
+                        <td id="quantity">42</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
-                </table>
+                </table> -->
                 <table class="itemTable">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -147,31 +147,45 @@
                         <th>Amount in Stock</th>
                         <th>Desired Amount</th>
                     </tr>
+                
                     <tr>
                         <td>Cheezy's</td>
                         <td>item1</td>
                         <td>#123</td>
-                        <td>4.99$</td>
+                        <td class="price">34</td>
                         <td>42</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
+                
                     <tr>
                         <td></td>
                         <td>item2</td>
                         <td>#123</td>
-                        <td>4.99$</td>
+                        <td class ="price">4.99</td>
                         <td>42</td>
                         <td>
                             <input type="number"  id="amount3" min="1" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
+              
+                    <tr>
+                        <th>Total<i class="fa-solid fa-cart-shopping"></i></th>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td><button class="cartButton">Update</button></td>
+                    </tr>
+                
                 </table>
         </section>
-
+            
         <section class="sidebar">
             <!-- First inner container  -->
             <section id = "main">
@@ -189,6 +203,8 @@
                 </div>
             </section>
         </section>
+        
     </main>
+    <script src = "cart.js"> </script>
 </body>
 </html>
