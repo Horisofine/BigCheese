@@ -1,22 +1,34 @@
 $(document).ready(function() {
 /* This section is for the cart */
-
-    $('.cartButton').click(function(){
-        var sum = 0.0;
-        var prices = $('.price').html();
-        prices = parseInt(prices, 10);
+            let total = '';
+            let roundedTotal = 0.0;
+            var sum = 0.0;
+            var price = 0.0;
+            var quantity = 0.0;
+    $('.filterBtn').click(function(){
+        $('.itemTable tr').each(function(){
+            $(this).find('.price').each(function(){
+                price = parseFloat($(this).html());
+              
+            });
+            $(this).find('#quantity').each(function(){
+                quantity = parseFloat($(this).val());
+                sum += quantity*price;
+                // alert(price);
+                // alert(quantity);
+            }); 
+            roundedTotal = sum.toFixed(2);  
+            total = $("<b> <b>").text(`${roundedTotal}`);       
+        }); 
         
-        $('.itemTable').find('.price').each(function(){
-            var price = $('.price').html();
-            var quantity = $('#amount3').val();
-            price = parseInt(price,10);
-            alert(quantity);
-            alert(price);
-            var amount = (quantity*price);
-            sum += amount;
-        });
-        alert(sum);
+        $('.cart-total').text('');
+        $('.cart-total').text(roundedTotal+'$');   
     });
 
+    $('.submitBtn').click(()=>{
+        if ( roundedTotal >= 5000){
+            alert('Order is pending');
+        }
+    });
 });
 

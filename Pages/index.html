@@ -8,11 +8,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/43124feaf5.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     
 </head>
-
 <body>
     <main>
         <section class="sidebar">
@@ -73,23 +73,23 @@
             </div>
 
             <div>
-                <!-- <table class="itemTable">
-                    <tr>
+               <table class="itemTable">
+                     <tr>
                         <th id = "supplier" >Supplier Name</th>
                         <th>Item Name</th>
                         <th>Product ID</th>
-                        <th id="price">Price</th>
+                        <th>Price</th>
                         <th>Amount in Stock</th>
                         <th>Desired Amount</th>
-                    </tr>
+                    </tr> 
                     <tr>
                         <td>Cheese Factory</td>
                         <td>item5</td>
                         <td>#123</td>
-                        <td id="price">4.99</td>
-                        <td id="quantity">12</td>
+                        <td class="price">4.99</td>
+                        <td>12</td>
                         <td>
-                            <input type="number"  id="amount3" min="1" class ="add" >
+                            <input type="number"  id="quantity" value="0" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
@@ -97,15 +97,14 @@
                         <td></td>
                         <td>item6</td>
                         <td>#123</td>
-                        <td id="price">4.99</td>
-                        <td id="quantity">42</td>
+                        <td class="price">4.99</td>
+                        <td>42</td>
                         <td>
-                            <input type="number"  id="amount3" min="1" class ="add" >
+                            <input type="number"  id="quantity" value="0" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
 
                     </tr>
-                </table>
                 <table class="itemTable">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -119,10 +118,10 @@
                         <td>Cheezers</td>
                         <td>item1</td>
                         <td>#123</td>
-                        <td id="price">4.99</td>
-                        <td id="quantity">42</td>
+                        <td class="price">5.25$</td>
+                        <td>42</td>
                         <td>
-                            <input type="number"  id="amount3" min="1" class ="add">
+                            <input type="number"  id="quantity" value="0" class ="add">
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
@@ -130,17 +129,16 @@
                         <td></td>
                         <td>item2</td>
                         <td>#123</td>
-                        <td id="price">4.99</td>
-                        <td id="quantity">42</td>
-                        <td>
-                            <input type="number"  id="amount3" min="1" class ="add" >
+                        <td class="price">7.99$</td>
+                        <td>42</td>
+                        <td class="input-cell">
+                            <input type="number"  id="quantity" value="0" class ="add" >
                         </td>
-                        <td><button class ="filterBtn">add</button></td>
+                        <td><button class ="filterBtn">Add</button></td>
+                        
                     </tr>
-                </table> -->
-                <table class="itemTable">
-                    <tr>
-                        <th id = "supplier" >Supplier Name</th>
+                    <tr >
+                        <th id ="supplier" >Supplier Name</th>
                         <th>Item Name</th>
                         <th>Product ID</th>
                         <th>Price/Item</th>
@@ -148,42 +146,49 @@
                         <th>Desired Amount</th>
                     </tr>
                 
-                    <tr>
+                    <tr class="clientRow">
                         <td>Cheezy's</td>
                         <td>item1</td>
                         <td>#123</td>
-                        <td class="price">34</td>
+                        <td class="price">34$</td>
                         <td>42</td>
                         <td>
-                            <input type="number"  id="amount3" min="1" class ="add" >
+                            <input type="text" value = "0" id="quantity" class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
                 
-                    <tr>
+                    <tr class = "clientRow">
                         <td></td>
                         <td>item2</td>
                         <td>#123</td>
-                        <td class ="price">4.99</td>
-                        <td>42</td>
+                        <td class ="price">4.99$</td>
+                        <td class ='stock'>23</td>
                         <td>
-                            <input type="number"  id="amount3" min="1" class ="add" >
+                            <input type="text"  id="quantity" value="0"  class ="add" >
                         </td>
                         <td><button class ="filterBtn">add</button></td>
                     </tr>
-              
-                    <tr>
-                        <th>Total<i class="fa-solid fa-cart-shopping"></i></th>
-                    </tr>
-                
-                    <tr>
+                    <tr class = "clientRow">
+                        <td></td>
+                        <td>item3</td>
+                        <td>#123</td>
+                        <td class ="price">7$</td>
+                        <td>23</td>
                         <td>
-                            
+                            <input type="text"  id="quantity" value="0" class ="add" >
                         </td>
-                        <td><button class="cartButton">Update</button></td>
+                        <td><button class ="filterBtn">add</button></td>
                     </tr>
+
+                    </tr> 
                 
                 </table>
+                <div class="total-section row">
+                    <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
+                    <b class="cart-total">0.00$</b>
+                    <button class ="submitBtn">Submit</button>
+                </div>
         </section>
             
         <section class="sidebar">

@@ -29,7 +29,6 @@ $(document).ready(()=>{
     $('.submit-order').click(()=>{
         alert('Submitting Order!');
     });
-
 });
 
 

@@ -1,28 +1,22 @@
+$(document).ready(()=>{
+    var password = '';
+    var confirmedPassword = '';
+  $('.account-create').click(function(){
+    password = $('.first-password').val();
+    confirmedPassword =  $('.password-confirmation').val();
 
-function addItem(){
-    var ul = document.getElementById("dynamic-list");
-    var candidate = document.getElementById("candidate");
-    var li = document.createElement("li");
-    li.setAttribute('id',candidate.value);
-    li.appendChild(document.createTextNode(candidate.value));
-    ul.appendChild(li);
-}
+    console.log(password);
+    console.log(confirmedPassword);
 
-function removeItem(){
-    var ul = document.getElementById("dynamic-list");
-    var candidate = document.getElementById("candidate");
-    var item = document.getElementById(candidate.value);
-    ul.removeChild(item);
-}
+  if( password === confirmedPassword){
+    alert('Account succesfully created!');
+    window.location.replace('customerLogin.html');
+  }else{
+    alert('Wrong password combination!')
+    $('.first-password').val('');
+    $('.password-confirmation').val('');
+    }
+  });
+});
 
 
-$('.submit-button').click(()=> alert('Redirecting to main page'));
-$('.create-btn').click(() => alert("Account succesfully created!"));
-
-function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }
