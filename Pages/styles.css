@@ -250,6 +250,9 @@ main .maincontent {
     letter-spacing: 0em;
 }
 .accEditBtn {
+    width:23%;
+    margin-top:10px;
+    margin-left:85%;
     padding: 10px 10px;
     border-radius: 15px;
     border: 2px solid lightgray;
