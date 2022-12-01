@@ -1,3 +1,8 @@
+<?php
+    include_once 'includes/dbConfig.inc.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,26 +26,26 @@
  
     <div class="login-row row">
                 <div class ="login-card card col-lg-6">
-                    <h2 class="form-title">Customer Login</h2>
-                    <form class = "form-group">
+                    <h2 class="form-title">Client Login</h2>
+                    <form class = "form-group" action="includes/Client_Login.inc.php" method="post">
                     <div class="input-login">
-                        <label class="label-name">Username</label>
-                        <input type = "text" placeholder="Username"> 
+                        <label class="label-name">Email</label>
+                        <input type = "text" placeholder="Email Address"> 
                     </div>
                     <div class="input-login"> 
                             <label class="label-name">Password</label>
                             <input type="password" placeholder="Password">
                             
                     </div>
-                    <button type="button" class="submit-button btn btn-lg" id="clientLoginbtn"><a href="index.html">Sign in</a></button>
+                    <button type="submit" class="submit-button btn btn-lg" id="clientLoginbtn">Sign in</button>
                 </form>
         
         </div>
       </div>
       <footer id="footer">
         <div class="bottom-footer">
-            <p class="account">Click here to<a class="bottom-tag" href="createAccount.html"> Create Account</a></p>
-            <p>Not a client, <a class="bottom-tag" href="supplierLogin.html">press here!</a> </p>
+            <p class="account">Click here to<a class="bottom-tag" href="client_signup.php"> Create Account</a></p>
+            <p>Not a client, <a class="bottom-tag" href="supplierLogin.php">press here!</a> </p>
             
           <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>

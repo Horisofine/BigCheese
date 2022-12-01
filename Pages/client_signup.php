@@ -18,32 +18,38 @@
 <body>
    
     <div class="login-row row">
-                <div class ="supplier-login card col-lg-6">
-                    <h2 class="form-title">Employee account</h2>
-                    <form class = "form-group">
-                    <div class="create-login input-login">
-                        <label class="label-name">Username</label>
-                        <input type = "text" placeholder="Username"> 
-                    </div>
-                    <div class="create-login input-login"> 
-                            <label class="label-name">Password</label>
-                            <input class='first-password'type="password" placeholder="Password">
-                    </div>
-                    <div class="create-login input-login">
-                        <label class=" label-name">Password confirmation</label>
-                        <input class ="password-confirmation" type = "password" placeholder="confirm password"> 
-                    </div>
-                    <button type="button" class="account-create create-btn btn">Create Account</button>
-               
-                </form>
-                
+        <div class ="supplier-login card col-lg-6">
+            <h2 class="form-title">Client Account</h2>
+            <form class = "form-group" action="includes/Client_Signup.inc.php" method="post">
+            <div class="create-login input-login">
+                <label class="label-name">First Name</label>
+                <input type = "text" name="first_name" placeholder="First Name"> 
+            </div>
+            <div class="create-login input-login">
+                <label class="label-name">Last Name</label>
+                <input type = "text" name="last_name" placeholder="Last Name"> 
+            </div>
+            <div class="create-login input-login">
+                <label class="label-name">Email Address</label>
+                <input type = "text" name="email" placeholder="Email Address"> 
+            </div>
+            <div class="create-login input-login"> 
+                    <label class="label-name">Password</label>
+                    <input class='first-password' type="password" name="password" placeholder="Password">
+            </div>
+            <div class="create-login input-login">
+                <label class=" label-name">Password confirmation</label>
+                <input class ="password-confirmation" type="password" name="password_confirm" placeholder="confirm password"> 
+            </div>
+            <button type="submit" class="account-create create-btn btn" name="submit">Create Account</button>
+            </form>    
         </div>
       </div>
       
       <footer id="supplier-footer">
         <div class="bottom-footer">
-            <p class="account">Click here to<a class="bottom-tag" href="customerLogin.html"> Client Login</a></p>
-            <p>Not a client, <a class="bottom-tag" href="supplierLogin.html">press here!</a> </p>
+            <p class="account">Have an account? Click here to<a class="bottom-tag" href="client_login.php"> login!</a></p>
+            <p>Not a client, press here to head to <a class="bottom-tag" href="supplierLogin.php">supplier login</a></p>
           <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>
             <i class="social-icon fa-brands fa-twitter"></i>
@@ -53,6 +59,5 @@
           </div>
       </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
-    <script src = "script.js"> </script>
 </body>
 </html>

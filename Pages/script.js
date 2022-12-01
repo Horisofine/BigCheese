@@ -10,7 +10,6 @@ $(document).ready(()=>{
 
   if( password === confirmedPassword){
     alert('Account succesfully created!');
-    window.location.replace('customerLogin.html');
   }else{
     alert('Wrong password combination!')
     $('.first-password').val('');

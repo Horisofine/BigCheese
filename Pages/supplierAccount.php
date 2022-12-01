@@ -38,7 +38,7 @@
                             <label class="label-name">Email</label>
                             <input type="email" placeholder="Password">
                     </div>
-                    <button type="button" class="create-btn btn"><a href="customerLogin.html"> Create Account</a></button>
+                    <button type="button" class="create-btn btn"><a href="customerLogin.php"> Create Account</a></button>
                
                 </form>
                 
@@ -47,8 +47,8 @@
       
       <footer id="supplier-footer">
         <div class="bottom-footer">
-            <p class="account">Click here to<a class="bottom-tag" href="customerLogin.html"> Client Login</a></p>
-            <p>Not a client, <a class="bottom-tag" href="supplierLogin.html">press here!</a> </p>
+            <p class="account">Click here to<a class="bottom-tag" href="customerLogin.php"> Client Login</a></p>
+            <p>Not a client, <a class="bottom-tag" href="supplierLogin.php">press here!</a> </p>
           <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>
             <i class="social-icon fa-brands fa-twitter"></i>
