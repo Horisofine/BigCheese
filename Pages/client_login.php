@@ -25,36 +25,35 @@
 <body>
  
     <div class="login-row row">
-                <div class ="login-card card col-lg-6">
-                    <h2 class="form-title">Client Login</h2>
-                    <form class = "form-group" action="includes/Client_Login.inc.php" method="post">
+        <div class ="login-card card col-lg-6">
+            <h2 class="form-title">Client Login</h2>
+                <form class = "form-group" action="includes/Client_Login.inc.php" method="post">
                     <div class="input-login">
                         <label class="label-name">Email</label>
                         <input type = "text" placeholder="Email Address"> 
                     </div>
                     <div class="input-login"> 
-                            <label class="label-name">Password</label>
-                            <input type="password" placeholder="Password">
+                        <label class="label-name">Password</label>
+                        <input type="password" placeholder="Password">
                             
                     </div>
                     <button type="submit" class="submit-button btn btn-lg" id="clientLoginbtn">Sign in</button>
                 </form>
-        
         </div>
-      </div>
-      <footer id="footer">
+    </div>
+    <footer id="footer">
         <div class="bottom-footer">
             <p class="account">Click here to<a class="bottom-tag" href="client_signup.php"> Create Account</a></p>
             <p>Not a client, <a class="bottom-tag" href="supplierLogin.php">press here!</a> </p>
             
-          <div class="social-icon">
+            <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>
             <i class="social-icon fa-brands fa-twitter"></i>
             <i class="social-icon fa-brands fa-instagram"></i>
             <i class="social-icon fa-solid fa-envelope"></i>
             <p class="copyright">© Copyright Company</p>
-          </div>
-      </footer>
+        </div>
+    </footer>
    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
     <script src = "script.js"> </script>
 </body>

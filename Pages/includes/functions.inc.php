@@ -2,26 +2,19 @@
 
 function emptyInputClientSignUp($first_name, $last_name, $email, $password, $passwordconf) {
     
-    $result;
+    $result = false;
     if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($passwordconf)) {
         $result = true;
-    }
-    else {
-        $result = false;
     }
     return $result;
 }
 
 function invalidEmail($email) {
 
-    $result;
+    $result = false;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     }
-    else {
-        $result = false;
-    }
-
     return $result;
 }
 

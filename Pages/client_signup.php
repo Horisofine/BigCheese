@@ -1,3 +1,9 @@
+<?php
+// Include the database configuration file
+include_once 'dbConfig.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,27 +27,27 @@
         <div class ="supplier-login card col-lg-6">
             <h2 class="form-title">Client Account</h2>
             <form class = "form-group" action="includes/Client_Signup.inc.php" method="post">
-            <div class="create-login input-login">
-                <label class="label-name">First Name</label>
-                <input type = "text" name="first_name" placeholder="First Name"> 
-            </div>
-            <div class="create-login input-login">
-                <label class="label-name">Last Name</label>
-                <input type = "text" name="last_name" placeholder="Last Name"> 
-            </div>
-            <div class="create-login input-login">
-                <label class="label-name">Email Address</label>
-                <input type = "text" name="email" placeholder="Email Address"> 
-            </div>
-            <div class="create-login input-login"> 
-                    <label class="label-name">Password</label>
-                    <input class='first-password' type="password" name="password" placeholder="Password">
-            </div>
-            <div class="create-login input-login">
-                <label class=" label-name">Password confirmation</label>
-                <input class ="password-confirmation" type="password" name="password_confirm" placeholder="confirm password"> 
-            </div>
-            <button type="submit" class="account-create create-btn btn" name="submit">Create Account</button>
+                <div class="create-login input-login">
+                    <label class="label-name">First Name</label>
+                    <input type = "text" name="first_name" placeholder="First Name"> 
+                </div>
+                <div class="create-login input-login">
+                    <label class="label-name">Last Name</label>
+                    <input type = "text" name="last_name" placeholder="Last Name"> 
+                </div>
+                <div class="create-login input-login">
+                    <label class="label-name">Email Address</label>
+                    <input type = "text" name="email" placeholder="Email Address"> 
+                </div>
+                <div class="create-login input-login"> 
+                        <label class="label-name">Password</label>
+                        <input class='first-password' type="password" name="password" placeholder="Password">
+                </div>
+                <div class="create-login input-login">
+                    <label class=" label-name">Password confirmation</label>
+                    <input class ="password-confirmation" type="password" name="password_confirm" placeholder="confirm password"> 
+                </div>
+                <button type="submit" class="account-create create-btn btn" name="submit">Create Account</button>
             </form>    
         </div>
       </div>
