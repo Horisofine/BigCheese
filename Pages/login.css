@@ -99,17 +99,11 @@ img{
     transition: all ease 500ms;
 }
 
-/* .login-card{
-    text-align: center;
-    height: 75%;
-    margin-left:25%;
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 7px 12px #ff9500;
-    background-color: white;
-} */
+.login-row{
+    padding-top: 150px;
+}
 .form-title{
-    font-family: 'Bebas Neue', cursive ;
+    font-family: 'Ubuntu', sans-serif;
     margin-bottom:30px;
     margin-top:15px;
 }
@@ -238,3 +232,4 @@ submit-button:after{
     padding: 10px 10px;
     background-color: white;
   }
+
