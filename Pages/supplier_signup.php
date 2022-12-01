@@ -20,7 +20,7 @@
     <div class="login-row row">
         <div class ="supplier-login card col-lg-6">
             <h2 class="form-title">Supplier Account</h2>
-            <form class = "form-group" action="Signup.inc.php" method="post">
+            <form class = "form-group" action="includes/Supplier_Signup.inc.php" method="post">
             <div class="create-login input-login">
                 <label class="label-name">Company Name</label>
                 <input type = "text" name="company_name" placeholder=""> 
@@ -39,13 +39,13 @@
             </div>
             <div class="create-login input-login"> 
                     <label class="label-name">Password</label>
-                    <input class='first-password' type="password" name="password" placeholder="Password">
+                    <input class='first-password' type="password" name="password1" placeholder="Password">
             </div>
             <div class="create-login input-login">
                 <label class=" label-name">Password confirmation</label>
-                <input class ="password-confirmation" type = "password" name="password_confirm" placeholder="confirm password"> 
+                <input class ="password-confirmation" type = "password" name="password2" placeholder="confirm password"> 
             </div>
-            <button type="button" class="account-create create-btn btn">Create Account</button>
+            <button type="submit" class="account-create create-btn btn" name="submit">Create Account</button>
             </form>    
         </div>
       </div>
@@ -63,6 +63,5 @@
           </div>
       </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
-    <script src = "script.js"> </script>
 </body>
 </html>

@@ -31,7 +31,7 @@
         }
 
         // Email exists
-        if (emailExists($conn, $email) !== false) {
+        if (clientEmailExists($conn, $email) !== false) {
             header("location: ../client_signup.php?error=emailTaken");
             exit();
         }
