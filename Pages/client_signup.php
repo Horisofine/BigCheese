@@ -1,6 +1,6 @@
 <?php
 // Include the database configuration file
-include_once 'dbConfig.php';
+include_once 'includes/dbConfig.inc.php';
 ?>
 
 
@@ -26,7 +26,7 @@ include_once 'dbConfig.php';
     <div class="login-row row">
         <div class ="supplier-login card col-lg-6">
             <h2 class="form-title">Client Account</h2>
-            <form class = "form-group" action="includes/Client_Signup.inc.php" method="post">
+            <form class = "form-group" action="includes/Client_Signup.inc.php" method="POST">
                 <div class="create-login input-login">
                     <label class="label-name">First Name</label>
                     <input type = "text" name="first_name" placeholder="First Name"> 
@@ -40,12 +40,12 @@ include_once 'dbConfig.php';
                     <input type = "text" name="email" placeholder="Email Address"> 
                 </div>
                 <div class="create-login input-login"> 
-                        <label class="label-name">Password</label>
-                        <input class='first-password' type="password" name="password" placeholder="Password">
+                    <label class="label-name">Password</label>
+                    <input type="password" name="password1" placeholder="Password">
                 </div>
                 <div class="create-login input-login">
                     <label class=" label-name">Password confirmation</label>
-                    <input class ="password-confirmation" type="password" name="password_confirm" placeholder="confirm password"> 
+                    <input class ="password-confirmation" type="password" name="password2" placeholder="confirm password"> 
                 </div>
                 <button type="submit" class="account-create create-btn btn" name="submit">Create Account</button>
             </form>    

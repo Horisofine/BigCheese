@@ -29,7 +29,7 @@
                 <label class="btn-supplier" for="btnradio1"> <a href="supplierLogin.php">Supplier</a></label>
             
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn-buyer" for="btnradio2"><a href="customerLogin.php">Customer</a></label>
+                <label class="btn-buyer" for="btnradio2"><a href="client_login.php">Customer</a></label>
         </div>
     </div>
     <footer id="supplier-footer">
