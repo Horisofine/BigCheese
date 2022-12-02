@@ -38,7 +38,7 @@
 
             session_start();
             $_SESSION['company_name'] = $row['company_name'];
-            $_SESSION['supplier_id'] = $row['supplier_id']
+            $_SESSION['supplier_id'] = $row['supplier_id'];
             header("Location: ../supplier_products.php?login=success");
             exit();
 
