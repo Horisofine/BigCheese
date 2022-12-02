@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'includes/db_connect.php';
+// include_once 'includes/db_connect.php';
 
 // Check usertype
 if (!isset($_SESSION['supplier_id'])) {
@@ -63,19 +63,21 @@ if (!isset($_SESSION['supplier_id'])) {
             </div>
 
             <div>
-				<form action="includes/addproduct.inc.php" method="$_POST">
+				<form action="includes/addproduct.inc.php" method="post">
 					<table class="itemTable">
 						<tbody>
 							<tr>
 								<th>Product Name</th>
 								<th>Price</th>
 								<th>Quantity</th>
+                                <th>Detail</th>
 							</tr>
 							<tr>
 								<td><input type="text" name="product_name" id="itemName" placeholder="Product Name"></td>
 								<td><input type="text" name="product_price" id="price" placeholder="Price"></td>
 								<td><input type="text" name="product_quantity" id="quantity" placeholder="Quantity"></td>
-								<td><button type="button" type="submit" name="add" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
+                                <td><input type="text" name="product_detail" id="detail" placeholder="Detail"></td>
+								<td><button type="submit" name="add" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
 							</tr> 
 						</tbody>
 					</table>
