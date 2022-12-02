@@ -30,19 +30,18 @@
     <div class="login-row row">
                 <div class ="supplier-login card col-lg-6">
                     <h2 class="form-title">Supplier Login</h2>
-                    <form class = "form-group">
-                    <div class="input-login">
-                        <label class="label-name">Email Address</label>
-                        <input type = "text" placeholder="Email Address"> 
-                    </div>
-                    <div class="input-login"> 
-                            <label class="label-name">Password</label>
-                            <input type="password" placeholder="Password">
-                    </div>
-
-                    <button type="button" class=" submit-button btn"><a href="supplier_products.php">Sign in</a></button>
+                    <form class = "form-group" action="includes/Supplier_Login.inc.php" method="post">
+                        <div class="input-login">
+                            <label class="label-name">Email Address</label>
+                            <input type = "text" name="email" placeholder="Email Address"> 
+                        </div>
+                        <div class="input-login"> 
+                                <label class="label-name">Password</label>
+                                <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class=" submit-button btn" name="submit">Sign in</button>
                
-                </form>
+                    </form>
         </div>
       </div>
       <footer id="supplier-footer">

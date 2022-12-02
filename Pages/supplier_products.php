@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,36 +20,9 @@
 
 <body>
     <main>
-        <section class="sidebar">
-            <!-- First inner container  -->
-            <section id = "main">
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="supplier_products.php">Add Product</a></li>  
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Second inner container -->
-            <section id ="main">
-                <div>
-                    <ul>
-                        <li><a href="edit_product.php">Edit Product</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="supplier_pending.php">Pending Orders</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="customerLogin.php">Logout</a></li>  
-                    </ul>
-                </div>
-                </section>
-        </section>
+        <?php
+            require 'sidebar_left.php'
+        ?>
 
         <section class="maincontent">
             <div>
@@ -80,18 +57,20 @@
 
             <div>
                 <table class="itemTable">
+                    
                     <tbody>
                     <tr>
                         <th>Product Name</th>
-                        <th>Product ID</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Details</th>
                     </tr>
                     <tr>
+                        <form action="Add_Product.inc.php" method="post">
                         <td><input type="text" id="itemName" placeholder="Product Name"></td>
-                        <td><input type="text" id="productId" placeholder="Product ID"></td>
                         <td><input type="text" id="price" placeholder="Price"></td>
                         <td><input type="text" id="quantity" placeholder="Quantity"></td>
+                        <td><input type="text" id="detail" placeholder="Detail"></td>
                         <td><button type="button" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
                     </tr> 
                 </tbody>
@@ -102,18 +81,10 @@
            
         </section>
 
-        <section class="sidebar">
-            <!-- First inner container  -->
-            <section id = "main">
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="supplier_account.php">Account</a></li>  
-                    </ul>
-                </div>
-            </section>
+        <?php
+            require 'sidebar_right.php';
+        ?>
 
-        </section>
         <script src = "order.js"> </script>
     </main>
     

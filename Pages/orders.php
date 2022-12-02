@@ -36,7 +36,11 @@
             </div>
             <div>
                 <ul>
-                    <li><a href="customerLogin.php">Logout</a></li>  
+                    <li>
+                        <form action="includes/logout.inc.php" method="post">
+                            <button type="submit" name="logout-submit">Logout</button>
+                        </form>
+                    </li>  
                 </ul>
             </div>
             </section>
