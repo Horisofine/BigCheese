@@ -1,11 +1,29 @@
 <?php
 session_start();
-// include_once 'includes/db_connect.php';
+include_once 'includes/dbConfig.inc.php';
 
 // Check usertype
 if (!isset($_SESSION['supplier_id'])) {
 	header("Location: index.php");
 	exit();
+}
+
+if (isset($_POST['add'])) {
+	$product_name = $_POST['product_name'];
+	$product_price = $_POST['product_price'];
+	$product_quantity = $_POST['product_quantity'];
+	$product_detail = $_POST['product_detail'];
+	$supplier_id = $_SESSION['supplier_id'];
+
+
+	$sql = "INSERT INTO products (name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
+
+	if (mysqli_query($conn, $sql)) {
+	 	echo "New record created successfully";
+	} else {
+	 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
 }
 
 ?>
@@ -63,25 +81,25 @@ if (!isset($_SESSION['supplier_id'])) {
             </div>
 
             <div>
-				<form action="includes/addproduct.inc.php" method="post">
-					<table class="itemTable">
-						<tbody>
-							<tr>
-								<th>Product Name</th>
-								<th>Price</th>
-								<th>Quantity</th>
-                                <th>Detail</th>
-							</tr>
-							<tr>
+				<table class="itemTable">
+					<tbody>
+						<tr>
+							<th>Product Name</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Detail</th>
+						</tr>
+						<tr>
+							<form action="" method="POST">
 								<td><input type="text" name="product_name" id="itemName" placeholder="Product Name"></td>
-								<td><input type="text" name="product_price" id="price" placeholder="Price"></td>
-								<td><input type="text" name="product_quantity" id="quantity" placeholder="Quantity"></td>
-                                <td><input type="text" name="product_detail" id="detail" placeholder="Detail"></td>
+								<td><input type="number" name="product_price" id="price" placeholder="Price"></td>
+								<td><input type="number" name="product_quantity" id="quantity" placeholder="Quantity"></td>
+								<td><input type="text" name="product_detail" id="detail" placeholder="Detail"></td>
 								<td><button type="submit" name="add" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
-							</tr> 
-						</tbody>
-					</table>
-				</form>
+							</form>
+						</tr> 
+					</tbody>
+				</table>
             </div>
                 <button type="submit" name="delete" class="delete-row">Remove</button>            
            
@@ -91,7 +109,6 @@ if (!isset($_SESSION['supplier_id'])) {
             require 'sidebar_right.php';
         ?>
 
-        <script src = "order.js"> </script>
     </main>
     
 </body>

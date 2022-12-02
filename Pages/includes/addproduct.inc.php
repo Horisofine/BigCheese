@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'dbConfig.inc.php';
 
 if(isset($_POST['add'])) {
 	$product_name = $_POST['product_name'];
@@ -8,15 +9,8 @@ if(isset($_POST['add'])) {
 	$product_detail = $_POST['product_detail'];
 	$supplier_id = $_SESSION['supplier_id'];
 
-	echo $product_name;
-	echo $product_price;
-	echo $product_detail;
-	echo $product_quantity;
-	echo $supplier_id;
 
-	require_once 'dbConfig.inc.php';
-
-	$sql = "INSERT INTO products (product_name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
+	$sql = "INSERT INTO products (name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
 
 	if (mysqli_query($conn, $sql)) {
 		echo "New record created successfully";
