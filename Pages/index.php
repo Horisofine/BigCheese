@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +39,11 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="customerLogin.php">Logout</a></li>  
+                        <li>
+                            <form action="includes/logout.inc.php" method="post">
+                                <button type="submit" name="logout-submit">Logout</button>
+                            </form>
+                        </li>  
                     </ul>
                 </div>
             </section>
@@ -191,23 +199,9 @@
                 </div>
         </section>
             
-        <section class="sidebar">
-            <!-- First inner container  -->
-            <section id = "main">
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="cart.php">Cart</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="user_account.php">Account</a></li>  
-                    </ul>
-                </div>
-            </section>
-        </section>
+        <?php
+            require 'sidebar.php';
+        ?>
         
     </main>
     <script src="/Backend Scripts/ProductDisplay.js"></script>

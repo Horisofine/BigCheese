@@ -30,14 +30,13 @@
                 <form class = "form-group" action="includes/Client_Login.inc.php" method="post">
                     <div class="input-login">
                         <label class="label-name">Email</label>
-                        <input type = "text" placeholder="Email Address"> 
+                        <input type = "text" placeholder="Email Address" name="email"> 
                     </div>
                     <div class="input-login"> 
                         <label class="label-name">Password</label>
-                        <input type="password" placeholder="Password">
-                            
+                        <input type="password" placeholder="Password" name="password">      
                     </div>
-                    <button type="submit" class="submit-button btn btn-lg" id="clientLoginbtn">Sign in</button>
+                    <button type="submit" class="submit-button btn btn-lg" id="clientLoginbtn" name="submit">Sign in</button>
                 </form>
         </div>
     </div>
