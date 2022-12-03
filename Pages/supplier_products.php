@@ -16,7 +16,7 @@ if (isset($_POST['add'])) {
 	$supplier_id = $_SESSION['supplier_id'];
 
 
-	$sql = "INSERT INTO products (name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
+	$sql = "INSERT INTO products (product_name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
 
 	if (mysqli_query($conn, $sql)) {
 	 	echo "New record created successfully";
@@ -97,11 +97,34 @@ if (isset($_POST['add'])) {
 								<td><input type="text" name="product_detail" id="detail" placeholder="Detail"></td>
 								<td><button type="submit" name="add" class="add-row btn">Add<i class="fa-solid fa-circle-plus"></i></button></td>
 							</form>
+
+						</tr>
+						<?php
+							$sql = "SELECT * FROM products WHERE supplier_id = " . $_SESSION['supplier_id'];
+							$result = mysqli_query($conn, $sql);
+							$resultCheck = mysqli_num_rows($result);
+
+							if ($resultCheck > 0):
+								while ($row = mysqli_fetch_assoc($result)):
+						?>
+						<tr>
+							<td><?php echo $row['product_name']; ?></td>
+							<td><?php echo $row['price']; ?></td>
+							<td><?php echo $row['quantity']; ?></td>
+							<td><?php echo $row['detail']; ?></td>
+							<td><button type="submit" name="edit" onclick="openForm()" class="add-row btn">Edit<i class="fa-solid fa-circle-plus"></i></button></td>
+						</tr>			
+						<?php
+								endwhile;
+							endif;
+						?>
+
+						<tr>
+
 						</tr> 
 					</tbody>
 				</table>
-            </div>
-                <button type="submit" name="delete" class="delete-row">Remove</button>            
+            </div>         
            
         </section>
 
