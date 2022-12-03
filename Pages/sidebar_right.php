@@ -10,7 +10,7 @@
                         if (isset($_SESSION['first_name'])){
                             echo '<a style="pointer-events: none">' . $_SESSION['first_name'] . '<br>' . $_SESSION['last_name'] . '</a>';
                         }
-                        if (isset($_SESSION['company_name'])) {
+                        else {
                             echo '<a style="pointer-events: none">' . $_SESSION['company_name'] . '</a>';
                         }
                     ?>

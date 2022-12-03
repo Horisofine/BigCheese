@@ -39,6 +39,7 @@
             session_start();
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['last_name'] = $row['last_name'];
+            $_SESSION['client_id'] = $row['client_id'];
 
             echo $_SESSION['first_name'];
             echo $_SESSION['last_name'];

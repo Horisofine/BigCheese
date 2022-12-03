@@ -16,7 +16,7 @@ if (isset($_POST['add'])) {
 	$supplier_id = $_SESSION['supplier_id'];
 
 
-	$sql = "INSERT INTO products (name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
+	$sql = "INSERT INTO products (product_name, price, quantity, detail, supplier_id) VALUES ('$product_name', '$product_price', '$product_quantity', '$product_detail', '$supplier_id')";
 
 	if (mysqli_query($conn, $sql)) {
 	 	echo "New record created successfully";
