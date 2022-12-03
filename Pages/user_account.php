@@ -1,3 +1,25 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION["first_name"])) {
+
+        include_once 'includes/dbConfig.inc.php';
+        $clientID = $_SESSION['client_id'];
+
+        $sql = "SELECT first_name, last_name, email_address FROM clients WHERE client_id='$clientID'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+
+            $first_name = $row['first_name'];
+            $last_name = $row['last_name'];
+            $email_address = $row['email_address'];
+    
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,9 +66,8 @@
             <section class="maincontent">
                 <h2 class="h2Acc">Your Account</h2>
                 <div class="infoDiv">
-                    <table class="userInfoTable">
+                    <!-- <table class="userInfoTable">
                         <tr>
-                            <td class="tdImg"><img src="anonymous2.jpg" class="img"><br><a href="" class="upload">Upload a photo (jpg or png)</a></td>
                             <td>
                                 <input type="text" placeholder="User Name">
                                 <br><br>
@@ -78,7 +99,26 @@
                                 </select>
                             </td>
                         </tr>
-                    </table>
+                    </table> -->
+
+                    <table class="userInfoTable">
+                        <tr>
+                            <td><b>First Name </b></td>
+                            <td> <?php echo $first_name ?> </td>
+                        </tr>
+                        <tr>
+                            <td><b>Last Name </b></td>
+                            <td> <?php echo $last_name ?> </td>
+                        </tr>
+                        <tr>
+                            <td><b>Email Address </b></td>
+                            <td> <?php echo $email_address ?> </td>
+                        </tr>
+                        <tr>
+                            <td> <button type="button" class="filterBtn">Edit Info</button> </td>
+                            <td> <button type="button" class="filterBtn">Change Password</button> </td>
+                        </tr>
+                    </table>                           
                 </div>
             </section>
 
