@@ -16,7 +16,7 @@
     <body>
         <main>
             <?php
-                require 'sidebar_left.php'
+                require 'supplier_sidebar_left.php'
             ?>
 
             <section class="maincontent">
