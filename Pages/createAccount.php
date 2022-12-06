@@ -21,6 +21,10 @@
                 <div class ="supplier-login card col-lg-6">
                     <h2 class="form-title">Employee account</h2>
                     <form class = "form-group">
+                        <div class="create-login input-login">
+                            <label class=" label-name">Email</label>
+                            <input class ="email" type = "text" placeholder="Email"> 
+                        </div>
                     <div class="create-login input-login">
                         <label class="label-name">Username</label>
                         <input type = "text" placeholder="Username"> 
