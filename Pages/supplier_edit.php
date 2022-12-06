@@ -16,36 +16,9 @@
 
 <body>
     <main>
-        <section class="sidebar">
-            <!-- First inner container  -->
-            <section id = "main">
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="supplier_products.html">Add Product</a></li>  
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Second inner container -->
-            <section id ="main">
-                <div>
-                    <ul>
-                        <li><a href="edit_product.html">Edit Product</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="supplier_pending.html">Pending Orders</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="customerLogin.html">Logout</a></li>  
-                    </ul>
-                </div>
-                </section>
-        </section>
+        <?php
+            require 'supplier_sidebar_left.php'
+        ?>
 
         <section class="maincontent">
             <div>
@@ -113,7 +86,7 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="supplier_account.html">Account</a></li>  
+                        <li><a href="supplier_account.php">Account</a></li>  
                     </ul>
                 </div>
             </section>

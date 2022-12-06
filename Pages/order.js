@@ -11,10 +11,6 @@ $(document).ready(()=>{
         }else{
             alert('Please fill in all boxes. ');
         }
-        $('#itemName').val('');
-        $('#productId').val('');
-        $('#quantity').val('');
-        $('#price').val('');
        
     });
 

@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include_once 'includes/dbConfig.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +26,7 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="index.html">Products</a></li>  
+                        <li><a href="index.php">Products</a></li>  
                     </ul>
                 </div>
             </section>
@@ -30,12 +35,16 @@
             <section id ="main">
                 <div>
                     <ul>
-                        <li><a href="orders.html">Orders</a></li>  
+                        <li><a href="orders.php">Orders</a></li>  
                     </ul>
                 </div>
                 <div>
                     <ul>
-                        <li><a href="customerLogin.html">Logout</a></li>  
+                        <li>
+                            <form action="includes/logout.inc.php" method="post">
+                                <button type="submit" name="logout-submit">Logout</button>
+                            </form>
+                        </li>  
                     </ul>
                 </div>
             </section>
@@ -73,145 +82,71 @@
             </div>
 
             <div>
-               <table class="itemTable">
-                     <tr>
-                        <th id = "supplier" >Supplier Name</th>
-                        <th>Item Name</th>
-                        <th>Product ID</th>
-                        <th>Price/ITEM</th>
-                        <th>Amount in Stock</th>
-                        <th>Desired Amount</th>
-                    </tr> 
-                    <tr>
-                        <td>Cheese Factory</td>
-                        <td>item5</td>
-                        <td>#123</td>
-                        <td class="price">4.99</td>
-                        <td>12</td>
-                        <td>
-                            <input type="number"  id="quantity" value="0" class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>item6</td>
-                        <td>#123</td>
-                        <td class="price">4.99</td>
-                        <td>42</td>
-                        <td>
-                            <input type="number"  id="quantity" value="0" class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
+            <form action="includes/Order_total.inc.php" method="post">
 
-                    </tr>
-                <table class="itemTable">
-                    <tr>
-                        <th id = "supplier" >Supplier Name</th>
-                        <th>Item Name</th>
-                        <th>Product ID</th>
-                        <th>Price/Item</th>
-                        <th>Amount in Stock</th>
-                        <th>Desired Amount</th>
-                    </tr>
-                    <tr>
-                        <td>Cheezers</td>
-                        <td>item1</td>
-                        <td>#123</td>
-                        <td class="price">5.25$</td>
-                        <td>42</td>
-                        <td>
-                            <input type="number"  id="quantity" value="0" class ="add">
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>item2</td>
-                        <td>#123</td>
-                        <td class="price">7.99$</td>
-                        <td>42</td>
-                        <td class="input-cell">
-                            <input type="number"  id="quantity" value="0" class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">Add</button></td>
-                        
-                    </tr>
-                    <tr >
-                        <th id ="supplier" >Supplier Name</th>
-                        <th>Item Name</th>
-                        <th>Product ID</th>
-                        <th>Price/Item</th>
-                        <th>Amount in Stock</th>
-                        <th>Desired Amount</th>
-                    </tr>
-                
-                    <tr class="clientRow">
-                        <td>Cheezy's</td>
-                        <td>item1</td>
-                        <td>#123</td>
-                        <td class="price">34$</td>
-                        <td>42</td>
-                        <td>
-                            <input type="text" value = "0" id="quantity" class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
-                    </tr>
-                
-                    <tr class = "clientRow">
-                        <td></td>
-                        <td>item2</td>
-                        <td>#123</td>
-                        <td class ="price">4.99$</td>
-                        <td class ='stock'>23</td>
-                        <td>
-                            <input type="text"  id="quantity" value="0"  class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
-                    </tr>
-                    <tr class = "clientRow">
-                        <td></td>
-                        <td>item3</td>
-                        <td>#123</td>
-                        <td class ="price">7$</td>
-                        <td>23</td>
-                        <td>
-                            <input type="text"  id="quantity" value="0" class ="add" >
-                        </td>
-                        <td><button class ="filterBtn">add</button></td>
-                    </tr>
+                <?php
+                    require 'client_display_products.php';
+                ?>
 
-                    </tr> 
-                
-                </table>
                 <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
                     <b class="cart-total">0.00$</b>
-                    <button class ="submitBtn">Submit</button>
+                    <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
                 </div>
+
+            </form>
+            <script>
+                $(document).ready(function() {
+                /* This section is for the cart */
+                let total = '';
+                let roundedTotal = 0.0;
+                        
+                    $('.filterBtn').click(function(){
+
+                        var sum = 0.0;
+                        var price = 0.0;
+                        var quantity = 0.0;
+                        var addRow = '';
+                        var itemName = '';
+
+                        $('.itemTable tr').each(function(){
+                            $(this).find('.price').each(function(){
+                                price = parseFloat($(this).html());
+                            });
+
+                            $(this).find('#quantity').each(function(){
+                                quantity = parseFloat($(this).val());
+                                sum += quantity*price;
+                            }); 
+                            
+                            roundedTotal = sum.toFixed(2);  
+                            total = $("<b> <b>").text(`${roundedTotal}`); 
+
+                            $(this).find('.item-name').each(function(){
+                                itemName = $(this).html();
+                                console.log($(itemName));
+                            });
+                        }); 
+                        
+                        $('.cart-total').text('');
+                        $('.cart-total').text(roundedTotal+'$');
+                        
+                    });
+
+                    $('.submitBtn').click(()=>{
+                        if ( roundedTotal >= 5000){
+                            alert('Order is pending');
+                        }
+                    });
+                });
+            </script>
         </section>
             
-        <section class="sidebar">
-            <!-- First inner container  -->
-            <section id = "main">
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="cart.html">Cart</a></li>  
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <!-- Potentially a link to the home page -->
-                        <li><a href="user_account.html">Account</a></li>  
-                    </ul>
-                </div>
-            </section>
-        </section>
+        <?php
+            require 'sidebar_right.php';
+        ?>
         
     </main>
-    <script src="/Backend Scripts/ProductDisplay.js"></script>
-    <script src = "cart.js"> </script>
     
 </body>
 </html>

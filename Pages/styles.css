@@ -236,13 +236,14 @@ main .maincontent {
 }
 .infoDiv {
     background-color: white;
-    width: 60%;
+    width: 80%;
     border-radius: 15px;
     border: 2px solid #795bc5;
-    padding-left: 100px;
-    padding-right: 120px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .userInfoTable {
+    width: 100%;
     padding: 30px 30px;
 }
 .upload {

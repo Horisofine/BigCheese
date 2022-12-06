@@ -22,7 +22,7 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="index.html">Products</a></li>  
+                        <li><a href="index.php">Products</a></li>  
                     </ul>
                 </div>
             </section>
@@ -31,12 +31,16 @@
         <section id ="main">
             <div>
                 <ul>
-                    <li><a href="orders.html">Orders</a></li>  
+                    <li><a href="orders.php">Orders</a></li>  
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="customerLogin.html">Logout</a></li>  
+                    <li>
+                        <form action="includes/logout.inc.php" method="post">
+                            <button type="submit" name="logout-submit">Logout</button>
+                        </form>
+                    </li>  
                 </ul>
             </div>
             </section>
@@ -119,13 +123,13 @@
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="cart.html">Cart</a></li>  
+                        <li><a href="cart.php">Cart</a></li>  
                     </ul>
                 </div>
                 <div>
                     <ul>
                         <!-- Potentially a link to the home page -->
-                        <li><a href="user_account.html">Account</a></li>  
+                        <li><a href="user_account.php">Account</a></li>  
                     </ul>
                 </div>
             </section>

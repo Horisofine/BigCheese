@@ -30,29 +30,25 @@
     <div class="login-row row">
                 <div class ="supplier-login card col-lg-6">
                     <h2 class="form-title">Supplier Login</h2>
-                    <form class = "form-group">
-                    <div class="input-login">
-                        <label class="label-name">Username</label>
-                        <input type = "text" placeholder="Username"> 
-                    </div>
-                    <div class="input-login"> 
-                            <label class="label-name">Password</label>
-                            <input type="password" placeholder="Password">
-                    </div>
-                    <div class="input-login"> 
-                        <label class="label-name">Company name</label>
-                        <input type="text" placeholder="Company name">
-                </div>
-                    <button type="button" class=" submit-button btn"><a href="supplier_products.html">Sign in</a></button>
+                    <form class = "form-group" action="includes/Supplier_Login.inc.php" method="post">
+                        <div class="input-login">
+                            <label class="label-name">Email Address</label>
+                            <input type = "text" name="email" placeholder="Email Address"> 
+                        </div>
+                        <div class="input-login"> 
+                                <label class="label-name">Password</label>
+                                <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class=" submit-button btn" name="submit">Sign in</button>
                
-                </form>
+                    </form>
         </div>
       </div>
       <footer id="supplier-footer">
         
         <div class="bottom-footer">
-            <p class="account">Click here to<a class="bottom-tag" href="createAccount.html"> Create Account</a></p>
-            <p class="account">Or go back to<a class="bottom-tag" href="customerLogin.html"> Client Login</a></p>
+            <p class="account">Click here to<a class="bottom-tag" href="supplier_signup.php"> Create Account</a></p>
+            <p class="account">Or go back to<a class="bottom-tag" href="client_login.php"> Client Login</a></p>
           <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>
             <i class="social-icon fa-brands fa-twitter"></i>
@@ -64,7 +60,7 @@
       <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
     <script src = "script.js"> </script>
 </body>
-</html>
+</php>
     
 </body>
 </html>

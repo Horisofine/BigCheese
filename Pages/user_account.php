@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,90 +19,31 @@
 
     <body>
         <main>
-            <section class="sidebar">
-                <!-- First inner container  -->
-                <section id = "main">
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="index.html">Products</a></li>  
-                        </ul>
-                    </div>
-                </section>
-    
-                <!-- Second inner container -->
-                <section id ="main">
-                    <div>
-                        <ul>
-                            <li><a href="orders.html">Orders</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="customerLogin.html">Logout</a></li>  
-                        </ul>
-                    </div>
-                </section>
-            </section>
+            <?php
+                if(isset($_SESSION["first_name"])) {
+                    require 'client_sidebar_left.php';
+                }
+                else {
+                    require 'supplier_sidebar_left.php';
+                }
+            ?>
+
 
             <section class="maincontent">
                 <h2 class="h2Acc">Your Account</h2>
                 <div class="infoDiv">
-                    <table class="userInfoTable">
-                        <tr>
-                            <td class="tdImg"><img src="anonymous2.jpg" class="img"><br><a href="" class="upload">Upload a photo (jpg or png)</a></td>
-                            <td>
-                                <input type="text" placeholder="User Name">
-                                <br><br>
-                                <input type="text" placeholder="Password">
-                                <br><br>
-                                <input type="text" placeholder="Email Address">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tdImg">
-                                <button type="submit" class="accEditBtn">Edit</button>
-                            </td>
-                            <td>
-                                <br><br>
-                                <input type="text" placeholder="First Name">
-                                <br><br>
-                                <input type="text" placeholder="Last Name">
-                                <br><br>
-                                <select>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
-                                </select>
-                                <br><br>
-                                <select>
-                                    <option>United States</option>
-                                    <option>Canada</option>
-                                    <option>Other</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
+
+                    <?php
+                        require 'user_account_table.php';
+                    ?>
+                    
                 </div>
             </section>
 
-            <section class="sidebar">
-                <!-- First inner container  -->
-                <section id = "main">
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="cart.html">Cart</a></li>  
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <!-- Potentially a link to the home page -->
-                            <li><a href="user_account.html">Account</a></li>  
-                        </ul>
-                    </div>
-                </section>
-            </section>
+            <?php
+                require 'sidebar_right.php'
+            ?>
+
         </main>
     </body>
 </html>
