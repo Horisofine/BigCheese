@@ -106,6 +106,7 @@
                 var previous_cheap = 0.0;
                 var cheapeast_previous = '';
                 
+                
                     $('.filterBtn').click(function(){
                         var client_counter = 0;
                         var sum1 = 0.0;
@@ -156,12 +157,14 @@
                             previous_cheap = sum;
                             cheapeast_previous = itemName;
                             console.log("Cheapest option: ", previous_cheap , " worth: ", previous_cheap);
- 
                         }
                         client_counter++;
                         
-                        
-                    }});
+                    }
+
+                });
+                    
+                   
 
                     $('.submitBtn').click(()=>{
                         if ( roundedTotal >= 5000){
