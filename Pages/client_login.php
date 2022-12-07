@@ -1,8 +1,3 @@
-<?php
-    include_once 'includes/dbConfig.inc.php';
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

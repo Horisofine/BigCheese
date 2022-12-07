@@ -107,7 +107,7 @@ if (isset($_POST['add'])) {
 							if ($resultCheck > 0):
 								while ($row = mysqli_fetch_assoc($result)):
 						?>
-						<tr>
+						<tr class="client-order">
 							<td><?php echo $row['product_name']; ?></td>
 							<td><?php echo $row['price']; ?></td>
 							<td><?php echo $row['quantity']; ?></td>

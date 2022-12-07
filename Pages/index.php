@@ -87,12 +87,12 @@
                 <?php
                     require 'client_display_products.php';
                 ?>
-
-                <div class="total-section row">
+                
+                <!-- <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
                     <b class="cart-total">0.00$</b>
                     <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
-                </div>
+                </div> -->
 
             </form>
             <script>
@@ -100,38 +100,68 @@
                 /* This section is for the cart */
                 let total = '';
                 let roundedTotal = 0.0;
-                        
+                var sum = 0.0;
+                const sales_map = new Map();
+                const sales_list = [];
+                var previous_cheap = 0.0;
+                var cheapeast_previous = '';
+                
                     $('.filterBtn').click(function(){
-
-                        var sum = 0.0;
+                        var client_counter = 0;
+                        var sum1 = 0.0;
+                        var sum2 = 0.0;
                         var price = 0.0;
                         var quantity = 0.0;
                         var addRow = '';
                         var itemName = '';
+                        var i = 3;
+                        var product_name = '';
+                        
 
-                        $('.itemTable tr').each(function(){
+                    while (client_counter < i){
+                        sum = 0.0;
+                    
+                        $(`.itemTable${client_counter} tr`).each(function(){
                             $(this).find('.price').each(function(){
                                 price = parseFloat($(this).html());
+                    
                             });
+                            itemName = $(this).find(`#supplier${client_counter}`).html();
+                            product_name = $(this).find('#product').html();
 
                             $(this).find('#quantity').each(function(){
                                 quantity = parseFloat($(this).val());
-                                sum += quantity*price;
+                                sum += quantity*price; 
+                                
                             }); 
                             
                             roundedTotal = sum.toFixed(2);  
                             total = $("<b> <b>").text(`${roundedTotal}`); 
+                            $(`.cart-total${client_counter}`).text('');
+                            $(`.cart-total${client_counter}`).text(roundedTotal+'$');
+                            if(itemName != undefined){console.log("item name: " + itemName);}
+                            
+                            // console.log("rounded total: " + roundedTotal);
+                            // console.log("quantity: " + quantity);
 
-                            $(this).find('.item-name').each(function(){
-                                itemName = $(this).html();
-                                console.log($(itemName));
-                            });
+                            sales_list.push(product_name,price,quantity);
+                            if(itemName != undefined){
+                                sales_map.set(itemName, sales_list);
+                            }
+
+                            
                         }); 
+                        if(client_counter === 0){previous_cheap = sum;}
+                        if (sum <= cheapeast_previous){
+                            previous_cheap = sum;
+                            cheapeast_previous = itemName;
+                            console.log("Cheapest option: ", previous_cheap , " worth: ", previous_cheap);
+ 
+                        }
+                        client_counter++;
                         
-                        $('.cart-total').text('');
-                        $('.cart-total').text(roundedTotal+'$');
                         
-                    });
+                    }});
 
                     $('.submitBtn').click(()=>{
                         if ( roundedTotal >= 5000){

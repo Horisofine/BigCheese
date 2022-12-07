@@ -273,7 +273,8 @@ main .maincontent {
 /*Supplier row adding */
 
 .client-order{
-    transition: ease all 600ms;
+    border-bottom: 5pt solid black;
+    transition: ease all 300ms;
 
 }
 
