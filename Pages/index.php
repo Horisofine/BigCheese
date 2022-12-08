@@ -221,7 +221,7 @@
                              
                         }
                     }
-                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- " + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
                     
                 });
                    

@@ -20,10 +20,13 @@
         <h1>Welcome to BigCheese Inc. <div class="img-cropper"><img src="img/06-03_Cheese_Article.jpg" alt=""></div></h1>
     </div>
    
-    <div class = " welcome-card row">
-
+    <div class= row">
+    <div class = 'welcome-card login-card' style="padding-bottom: 75px">
+        <div class = "top-shelf">
             <h2 class="welcome-title">Thank you for choosing BigCheese Inc.</h2>
             <h4 class = "cheesy_quote" >Made for all things cheesy</h4>
+            <h4> Which are you ? <h4>
+        </div>
 
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
@@ -32,19 +35,11 @@
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                 <label class="btn-buyer" for="btnradio2"><a href="client_login.php">Customer</a></label>
         </div>
+        </div>
 
     </div>
 
-    <footer id="supplier-footer">
-        <div class="bottom-footer">
-          <div class="social-icon">
-            <i class="social-icon fa-brands fa-facebook"></i>
-            <i class="social-icon fa-brands fa-twitter"></i>
-            <i class="social-icon fa-brands fa-instagram"></i>
-            <i class="social-icon fa-solid fa-envelope"></i>
-            <p class="copyright">© Copyright Company</p>
-          </div>
-      </footer>
+  
       <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
     <script src = "script.js"> </script>
 </body>
