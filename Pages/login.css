@@ -69,15 +69,12 @@ img{
     transition: all ease 500ms;
 }
 
-.btn-buyer{
+.btn-buyer {
     text-align: center;
     background-color: white;
     color: #9368E9;
     border: 1px solid #9368E9;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-radius: 7%;
     padding: 10px 10px;
     transition: all ease 500ms;
 }
@@ -222,14 +219,14 @@ submit-button:after{
     text-align:left;
   }
 
-  .welcome-card{
+  .welcome-card {
     text-align: center;
-    height: 75%;
-    margin-left: 10%;
-    margin-right: 10%;
-    border: 1px #9368E9;
-    border-radius: 5px;
+    width:35%;
+    height: 250px;
+    margin-left: 450px !important; 
+    border: 1px #9368E9 ;
+    border-radius: 5px ;
     padding: 10px 10px;
     background-color: white;
   }
-
+  

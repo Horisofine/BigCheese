@@ -19,11 +19,12 @@
     <div class="header-row row">
         <h1>Welcome to BigCheese Inc. <div class="img-cropper"><img src="img/06-03_Cheese_Article.jpg" alt=""></div></h1>
     </div>
-    <div class="row">
-        <div class="welcome-card col-lg-6">
+   
+    <div class = " welcome-card row">
+
             <h2 class="welcome-title">Thank you for choosing BigCheese Inc.</h2>
-            <h4>Made for all things cheesy</h4>
-            Supplier or Customer? 
+            <h4 class = "cheesy_quote" >Made for all things cheesy</h4>
+
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                 <label class="btn-supplier" for="btnradio1"> <a href="supplierLogin.php">Supplier</a></label>
@@ -31,9 +32,10 @@
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                 <label class="btn-buyer" for="btnradio2"><a href="client_login.php">Customer</a></label>
         </div>
+
     </div>
+
     <footer id="supplier-footer">
-        
         <div class="bottom-footer">
           <div class="social-icon">
             <i class="social-icon fa-brands fa-facebook"></i>
