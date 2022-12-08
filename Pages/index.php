@@ -167,12 +167,7 @@
                             min_sum = cart_totals;
                             cheapest_supplier = key;
                             }
-                            // if (cart_totals !== 0){
-                            //   joined = val.join('\n');
-                           
-                            // full_report = full_report.concat(joined);
-                            // alert(full_report);
-                            }
+                        }
                             if (cart_totals !== 0){
                               joined = val.join('\n');
                            
@@ -180,9 +175,9 @@
                              
                         }
                     }
-                    alert("----------- Big Cheese Report ----------- \n" + full_report);
+                    alert("----------- Big Cheese Report ----------- " + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of: $" + min_sum);
 
-                })
+                });
                    
                 console.log("this is the values of big cheese:" , sales_map.values());
                     
