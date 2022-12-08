@@ -82,87 +82,109 @@
             </div>
 
             <div>
-            <form action="includes/Order_total.inc.php" method="post">
+            <!-- action="includes/Order_total.inc.php" -->
+            <form  method="post">
 
                 <?php
                     require 'client_display_products.php';
                 ?>
                 
-                <!-- <div class="total-section row">
-                    <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
-                    <b class="cart-total">0.00$</b>
-                    <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
-                </div> -->
 
             </form>
             <script>
                 $(document).ready(function() {
                 /* This section is for the cart */
+                var full_report = '';
+                var cart_totals = 0;
+                var cheapest_supplier = '';
                 let total = '';
                 let roundedTotal = 0.0;
                 var sum = 0.0;
                 const sales_map = new Map();
-                const sales_list = [];
-                var previous_cheap = 0.0;
-                var cheapeast_previous = '';
-                
-                
+                 var client_counter = 0;
+                 var product_name = '';
+                 var itemName = '';
+                 var min_sum = 0;
+
                     $('.filterBtn').click(function(){
+                     
                         var client_counter = 0;
-                        var sum1 = 0.0;
-                        var sum2 = 0.0;
                         var price = 0.0;
                         var quantity = 0.0;
                         var addRow = '';
-                        var itemName = '';
+                       
                         var i = 3;
-                        var product_name = '';
                         
-
+                    
                     while (client_counter < i){
                         sum = 0.0;
-                    
+                        let sales_list = [];;
+                        
                         $(`.itemTable${client_counter} tr`).each(function(){
+                            
                             $(this).find('.price').each(function(){
                                 price = parseFloat($(this).html());
-                    
+   
                             });
-                            itemName = $(this).find(`#supplier${client_counter}`).html();
-                            product_name = $(this).find('#product').html();
 
                             $(this).find('#quantity').each(function(){
                                 quantity = parseFloat($(this).val());
-                                sum += quantity*price; 
-                                
-                            }); 
-                            
-                            roundedTotal = sum.toFixed(2);  
-                            total = $("<b> <b>").text(`${roundedTotal}`); 
-                            $(`.cart-total${client_counter}`).text('');
-                            $(`.cart-total${client_counter}`).text(roundedTotal+'$');
-                            if(itemName != undefined){console.log("item name: " + itemName);}
-                            
-                            // console.log("rounded total: " + roundedTotal);
-                            // console.log("quantity: " + quantity);
+                                sum += quantity*price;
 
-                            sales_list.push(product_name,price,quantity);
+                            }); 
+                            itemName = $(this).find(`#supplier${client_counter}`).html();
+                            product_name = $(this).find('#product').html();
+                            
+                            if(product_name != undefined && !(sales_list.includes(product_name))){
+                                sales_list.push(product_name,price,quantity, sum);
+                            }
                             if(itemName != undefined){
                                 sales_map.set(itemName, sales_list);
-                            }
+                                }
 
+                            roundedTotal = sum.toFixed(2);  
+                            total = $("<b> <b>").text(`${roundedTotal}`); 
+    
                             
+                            $(`.cart-total${client_counter}`).text('');
+                            $(`.cart-total${client_counter}`).text(roundedTotal+'$');
+    
                         }); 
-                        if(client_counter === 0){previous_cheap = sum;}
-                        if (sum <= cheapeast_previous){
-                            previous_cheap = sum;
-                            cheapeast_previous = itemName;
-                            console.log("Cheapest option: ", previous_cheap , " worth: ", previous_cheap);
-                        }
+                      
                         client_counter++;
-                        
+ 
                     }
-
                 });
+
+                $('.submitBtn0').click(()=>{
+                    var displayInfo = sales_map.keys();
+                    for (var [key, val] of sales_map){
+                        var joined = '';
+                        cart_totals = val[7];
+                        console.log(typeof(min_sum) , " " ,cart_totals);
+                        if(cart_totals < min_sum || min_sum === 0){
+                            if(cart_totals !== 0){
+                            min_sum = cart_totals;
+                            cheapest_supplier = key;
+                            }
+                            // if (cart_totals !== 0){
+                            //   joined = val.join('\n');
+                           
+                            // full_report = full_report.concat(joined);
+                            // alert(full_report);
+                            }
+                            if (cart_totals !== 0){
+                              joined = val.join('\n');
+                           
+                            full_report = full_report.concat("\n\n"+key+"\n" + joined);
+                             
+                        }
+                    }
+                    alert("----------- Big Cheese Report ----------- \n" + full_report);
+
+                })
+                   
+                console.log("this is the values of big cheese:" , sales_map.values());
                     
                    
 

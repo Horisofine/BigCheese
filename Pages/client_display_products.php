@@ -20,15 +20,6 @@
             if ($resultCheck2 > 0) : // Checking if number of products is > 0
                 ?>
 
-                <!-- <table class="itemTable">
-                    <tr>
-                        <th id = "supplier" >Supplier Name</th>
-                        <th>Item Name</th>
-                        <th>Product ID</th>
-                        <th>Price/Item</th>
-                        <th>Amount in Stock</th>
-                        <th>Desired Amount</th>
-                    </tr> -->
                     <table class="itemTable<?php echo $table_number?>">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -56,11 +47,11 @@
 
                     ?>
                     <tr>
-                        <td id = "supplier<?php ($company_name != "") ? print $table_number: ""  ?>"> <?php echo $company_name ?></td>
-                        <td id = "product"> <?php echo $product_name ?></td>
+                        <td id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>"><?php echo $company_name ?></td>
+                        <td id = "product"><?php echo $product_name ?></td>
                         <td> <?php echo $productID ?></td>
-                        <td class="price"> <?php echo $price ?></td>
-                        <td> <?php echo $quantity ?></td>
+                        <td class="price"><?php echo $price ?>$</td>
+                        <td><?php echo $quantity ?></td>
                         <td>
                             <input type="text" name="add_quantity" id="quantity" value="0" class ="add">
                         </td>
@@ -77,7 +68,7 @@
             <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
                     <b class="cart-total<?php echo $table_number?>">0.00$</b>
-                    <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
+                    <button class ="submitBtn<?php echo $table_number?>" type="submit" name="order_submit">Submit</button>
                 </div>
         <?php
         $table_number++;
