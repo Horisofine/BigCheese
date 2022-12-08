@@ -94,6 +94,7 @@
             <script>
                 $(document).ready(function() {
                 /* This section is for the cart */
+                const max_order = 5000;
                 var full_report = '';
                 var cart_totals = 0;
                 var cheapest_supplier = '';
@@ -175,8 +176,53 @@
                              
                         }
                     }
-                    alert("----------- Big Cheese Report ----------- " + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of: $" + min_sum);
-
+                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                    
+                });
+                
+                $('.submitBtn1').click(()=>{
+                    var displayInfo = sales_map.keys();
+                    for (var [key, val] of sales_map){
+                        var joined = '';
+                        cart_totals = val[7];
+                        console.log(typeof(min_sum) , " " ,cart_totals);
+                        if(cart_totals < min_sum || min_sum === 0){
+                            if(cart_totals !== 0){
+                            min_sum = cart_totals;
+                            cheapest_supplier = key;
+                            }
+                        }
+                            if (cart_totals !== 0){
+                              joined = val.join('\n');
+                           
+                            full_report = full_report.concat("\n\n"+key+"\n" + joined);
+                             
+                        }
+                    }
+                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                });
+                
+                $('.submitBtn2').click(()=>{
+                    var displayInfo = sales_map.keys();
+                    for (var [key, val] of sales_map){
+                        var joined = '';
+                        cart_totals = val[7];
+                        console.log(typeof(min_sum) , " " ,cart_totals);
+                        if(cart_totals < min_sum || min_sum === 0){
+                            if(cart_totals !== 0){
+                            min_sum = cart_totals;
+                            cheapest_supplier = key;
+                            }
+                        }
+                            if (cart_totals !== 0){
+                              joined = val.join('\n');
+                           
+                            full_report = full_report.concat("\n\n"+key+"\n" + joined);
+                             
+                        }
+                    }
+                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                    
                 });
                    
                 console.log("this is the values of big cheese:" , sales_map.values());
