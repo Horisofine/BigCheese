@@ -40,7 +40,6 @@ if (isset($_POST['add'])) {
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -112,8 +111,8 @@ if (isset($_POST['add'])) {
 							<td><?php echo $row['price']; ?></td>
 							<td><?php echo $row['quantity']; ?></td>
 							<td><?php echo $row['detail']; ?></td>
-							<td><button type="submit" name="edit" onclick="openForm()" class="add-row btn">Edit<i class="fa-solid fa-circle-plus"></i></button></td>
-						</tr>			
+							<td><button class="add-row btn"><i class="fa-solid fa-circle-plus"></i><a href="supplier_edit.php?edit=<?php echo $row['product_id'] ?>">Edit</a></button></td>
+						</tr>
 						<?php
 								endwhile;
 							endif;
@@ -121,11 +120,11 @@ if (isset($_POST['add'])) {
 
 						<tr>
 
-						</tr> 
+						</tr>
 					</tbody>
 				</table>
-            </div>         
-           
+            </div>
+			
         </section>
 
         <?php
