@@ -20,7 +20,7 @@
 
             if ($resultCheck2 > 0) : // Checking if number of products is > 0
                 ?>
-                    <form method="post" action="includes/Order_total.inc.php">
+                    <form method="post" >
                     <table class="itemTable<?php echo $table_number?>">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -48,17 +48,17 @@
 
                     ?>
                     <tr>
-                        <td id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>">
-                            <input type="hidden" name="company_name[]" value="<?php echo $current_company_name ?>" readonly><?php echo $company_name ?>
+                        <td >
+                            <input id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>"type="hidden" name="company_name[]" value="<?php echo $current_company_name ?>" readonly><?php echo $company_name ?>
                         </td>
-                        <td id = "product">
-                            <input type="text" name="product_name[]" value="<?php echo $product_name ?>" readonly>
+                        <td >
+                            <input id = "product" type="text" name="product_name[]" value="<?php echo $product_name ?>" readonly>
                         </td>
                         <td> 
                             <input type="text" name="product_id[]" value="<?php echo $productID ?>" readonly>
                         </td>
-                        <td class="price">
-                            <input type="text" name="product_price[]" value="<?php echo $price ?>" readonly>$
+                        <td >
+                            <input class="price" type="text" name="product_price[]" value="<?php echo $price ?>$" readonly>
                         </td>
                         <td>
                             <input type="text" name="product_quantity_available[]" value="<?php echo $quantity ?>" readonly>

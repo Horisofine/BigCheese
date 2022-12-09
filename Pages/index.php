@@ -122,7 +122,7 @@
                         $(`.itemTable${client_counter} tr`).each(function(){
                             
                             $(this).find('.price').each(function(){
-                                price = parseFloat($(this).html());
+                                price = parseFloat($(this).val());
    
                             });
 
@@ -131,8 +131,8 @@
                                 sum += quantity*price;
 
                             }); 
-                            itemName = $(this).find(`#supplier${client_counter}`).html();
-                            product_name = $(this).find('#product').html();
+                            itemName = $(this).find(`#supplier${client_counter}`).val();
+                            product_name = $(this).find('#product').val();
                             
                             if(product_name != undefined && !(sales_list.includes(product_name))){
                                 sales_list.push(product_name,price,quantity, sum);
@@ -149,13 +149,12 @@
                         }); 
                       
                         client_counter++;
+                        console.log(sales_map.keys()," this is the values of big cheese:" , sales_map.values());
  
                     }
                 });
 
                 $('.submitBtn').click(()=>{
-
-                    var element = $('[name = "total0"]').val();
                     
                     var displayInfo = sales_map.keys();
                     
@@ -178,19 +177,8 @@
                     }
                     
                     if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
-                    <?php 
-                    $submit = "<script> document.write(cheapest_supplier);</script>";
-                    $myFile = fopen('total.txt', "a");
-                    fwrite($myFile, $submit);
 
-                    ?>
-                    
-                    
                 });
-                   
-                console.log("this is the values of big cheese:" , sales_map.values());
-
-  
                 });
             </script>
             
