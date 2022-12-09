@@ -15,18 +15,6 @@
             $order_total += ($product_quantity[$i] * $product_price[$i]);
         }
 
-        // for ($i=0; $i < count($product_name); $i++) { 
-        //     echo $product_name[$i];
-        //     echo "<br>";
-        //     echo $product_quantity[$i];
-        //     echo "<br>";
-        //     echo $product_quantity_available[$i];
-        //     echo "<br>";
-        //     echo $product_price[$i];
-        //     echo "<br>";
-        // }
-        // ($_SESSION["client_id"], date("j-m-y"), $order_total)
-
         $sql1 = "INSERT INTO orders (client_id, order_date, order_total) VALUES (?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
 
@@ -43,9 +31,6 @@
         mysqli_stmt_close($stmt);
 
         $last_id = mysqli_insert_id($conn);
-    
-        // header("location: ../index.php?error=none");
-        // exit();
 
         $sql2 = "SELECT supplier_id FROM suppliers WHERE company_name='$company_name[0]';";
         $result2 = mysqli_query($conn, $sql2);
@@ -77,4 +62,7 @@
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
         }
+
+        header("location: ../orders.php?error=none");
+        exit();
     }
