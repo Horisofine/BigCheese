@@ -47,7 +47,8 @@
 
                     ?>
                     <tr>
-                        <td id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>"><?php echo $company_name ?></td>
+                        <form action = "get">
+                        <td name = "<?php echo $company_name ?>" = id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>"><?php echo $company_name ?></td>
                         <td id = "product"><?php echo $product_name ?></td>
                         <td> <?php echo $productID ?></td>
                         <td class="price"><?php echo $price ?>$</td>
@@ -67,8 +68,10 @@
             </table>
             <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
-                    <b class="cart-total<?php echo $table_number?>">0.00$</b>
-                    <button class ="submitBtn<?php echo $table_number?>" type="submit" name="order_submit">Submit</button>
+                    <form method = "GET">
+                    <input name = "total<?php echo $table_number?>" class="cart-total<?php echo $table_number?>" value = "0.00$" readonly></input>
+                    </form>
+                    <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
                 </div>
         <?php
         $table_number++;
