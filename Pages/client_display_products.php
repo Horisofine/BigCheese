@@ -12,6 +12,7 @@
 
             $supplierID = $row1["supplier_id"];
             $company_name = $row1["company_name"];
+            $current_company_name = $company_name . "";
             
             $sql2 = "SELECT * FROM products WHERE supplier_id='$supplierID';";
             $productResult = mysqli_query($conn, $sql2);
@@ -19,7 +20,7 @@
 
             if ($resultCheck2 > 0) : // Checking if number of products is > 0
                 ?>
-
+                    <form method="post" action="includes/Order_total.inc.php">
                     <table class="itemTable<?php echo $table_number?>">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -47,13 +48,23 @@
 
                     ?>
                     <tr>
-                        <td id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>"><?php echo $company_name ?></td>
-                        <td id = "product"><?php echo $product_name ?></td>
-                        <td> <?php echo $productID ?></td>
-                        <td class="price"><?php echo $price ?>$</td>
-                        <td><?php echo $quantity ?></td>
+                        <td id = "<?php ($company_name != "") ? print 'supplier' . $table_number :  '' ?>">
+                            <input type="hidden" name="company_name[]" value="<?php echo $current_company_name ?>" readonly><?php echo $company_name ?>
+                        </td>
+                        <td id = "product">
+                            <input type="text" name="product_name[]" value="<?php echo $product_name ?>" readonly>
+                        </td>
+                        <td> 
+                            <input type="text" name="product_id[]" value="<?php echo $productID ?>" readonly>
+                        </td>
+                        <td class="price">
+                            <input type="text" name="product_price[]" value="<?php echo $price ?>" readonly>$
+                        </td>
                         <td>
-                            <input type="text" name="add_quantity" id="quantity" value="0" class ="add">
+                            <input type="text" name="product_quantity_available[]" value="<?php echo $quantity ?>" readonly>
+                        </td>
+                        <td>
+                            <input type="number" name="order_quantity[]" id="quantity" value="0" class ="add">
                         </td>
                         <td><button type="button" class="filterBtn">add</button></td>
                     </tr>
@@ -70,6 +81,7 @@
                     <b class="cart-total<?php echo $table_number?>">0.00$</b>
                     <button class ="submitBtn<?php echo $table_number?>" type="submit" name="order_submit">Submit</button>
                 </div>
+        </form>
         <?php
         $table_number++;
         endwhile;

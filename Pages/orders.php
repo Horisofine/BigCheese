@@ -78,42 +78,9 @@
             </div>
 
             <div>
-                <table class="itemTable">
-                    <tr>
-                        <th>Order Number</th>
-                        <th>Supplier Name</th>
-                        <th>Order ID</th>
-                        <th>Total Units</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Cheese factory</td>
-                        <td>O_123</td>
-                        <td>300</td>
-                        <td>5034$</td>
-                        <td>Approved</td>
-
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>cheezy's</td>
-                        <td>O_125</td>
-                        <td>320</td>
-                        <td>5934$</td>
-                        <td>Approved</td>
-
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Cheezers</td>
-                        <td>O_124</td>
-                        <td>2400</td>
-                        <td>2034$</td>
-                        <td>Pending</td>
-                    </tr>
-                </table>
+                <?php
+                    require "order_table.php";
+                ?>
             </div>
         </section>
 
