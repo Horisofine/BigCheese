@@ -88,176 +88,114 @@
                 ?>
                 
             <script>
-                // $(document).ready(function() {
-                // /* This section is for the cart */
-                // const max_order = 5000;
-                // var full_report = '';
-                // var cart_totals = 0;
-                // var cheapest_supplier = '';
-                // let total = '';
-                // let roundedTotal = 0.0;
-                // var sum = 0.0;
-                // const sales_map = new Map();
-                //  var client_counter = 0;
-                //  var product_name = '';
-                //  var itemName = '';
-                //  var min_sum = 0;
+                $(document).ready(function() {
+                /* This section is for the cart */
+                var cheap_name = '';
+                var txt_info = '';
+                const max_order = 5000;
+                var full_report = '';
+                var cart_totals = 0;
+                var cheapest_supplier = '';
+                let total = '';
+                let roundedTotal = 0.0;
+                var sum = 0.0;
+                const sales_map = new Map();
+                 var client_counter = 0;
+                 var product_name = '';
+                 var itemName = '';
+                 var min_sum = 0;
 
-                //     $('.filterBtn').click(function(){
+                    $('.filterBtn').click(function(){
                      
-                //         var client_counter = 0;
-                //         var price = 0.0;
-                //         var quantity = 0.0;
-                //         var addRow = '';
+                        var client_counter = 0;
+                        var price = 0.0;
+                        var quantity = 0.0;
+                        var addRow = '';
                        
-                //         var i = 3;
+                        var i = 3;
                         
                     
-                //     while (client_counter < i){
-                //         sum = 0.0;
-                //         let sales_list = [];;
+                    while (client_counter < i){
+                        sum = 0.0;
+                        let sales_list = [];;
                         
-                //         $(`.itemTable${client_counter} tr`).each(function(){
+                        $(`.itemTable${client_counter} tr`).each(function(){
                             
-                //             $(this).find('.price').each(function(){
-                //                 price = parseFloat($(this).html());
+                            $(this).find('.price').each(function(){
+                                price = parseFloat($(this).html());
    
-                //             });
+                            });
 
-                //             $(this).find('#quantity').each(function(){
-                //                 quantity = parseFloat($(this).val());
-                //                 sum += quantity*price;
+                            $(this).find('#quantity').each(function(){
+                                quantity = parseFloat($(this).val());
+                                sum += quantity*price;
 
-                //             }); 
-                //             itemName = $(this).find(`#supplier${client_counter}`).html();
-                //             product_name = $(this).find('#product').html();
+                            }); 
+                            itemName = $(this).find(`#supplier${client_counter}`).html();
+                            product_name = $(this).find('#product').html();
                             
-                //             if(product_name != undefined && !(sales_list.includes(product_name))){
-                //                 sales_list.push(product_name,price,quantity, sum);
-                //             }
-                //             if(itemName != undefined){
-                //                 sales_map.set(itemName, sales_list);
-                //                 }
+                            if(product_name != undefined && !(sales_list.includes(product_name))){
+                                sales_list.push(product_name,price,quantity, sum);
+                            }
+                            if(itemName != undefined){
+                                sales_map.set(itemName, sales_list);
+                                }
 
-                //             roundedTotal = sum.toFixed(2);  
-                //             total = $("<b> <b>").text(`${roundedTotal}`); 
-    
-                            
-                //             $(`.cart-total${client_counter}`).text('');
-                //             $(`.cart-total${client_counter}`).text(roundedTotal+'$');
-    
-                //         }); 
-                      
-                //         client_counter++;
+                            roundedTotal = sum.toFixed(2);  
  
-                //     }
-                // });
+                            $(`.cart-total${client_counter}`).val('');
+                            $(`.cart-total${client_counter}`).val(roundedTotal+'$');
+    
+                        }); 
+                      
+                        client_counter++;
+ 
+                    }
+                });
 
-                // $('.submitBtn0').click(()=>{
-                //     var displayInfo = sales_map.keys();
-                //     for (var [key, val] of sales_map){
-                //         var joined = '';
-                //         cart_totals = val[7];
-                //         console.log(typeof(min_sum) , " " ,cart_totals);
-                //         if(cart_totals < min_sum || min_sum === 0){
-                //             if(cart_totals !== 0){
-                //             min_sum = cart_totals;
-                //             cheapest_supplier = key;
-                //             }
-                //         }
-                //             if (cart_totals !== 0){
-                //               joined = val.join('\n');
-                           
-                //             full_report = full_report.concat("\n\n"+key+"\n" + joined);
-                //             console.log(full_report);
-                //         }
-                //     }
-                //     // order_details(full_report, cheapest_supplier);
-                //     if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                $('.submitBtn').click(()=>{
+
+                    var element = $('[name = "total0"]').val();
                     
-                // });
-                
-                // $('.submitBtn1').click(()=>{
-                //     var displayInfo = sales_map.keys();
-                //     for (var [key, val] of sales_map){
-                //         var joined = '';
-                //         cart_totals = val[7];
-                //         console.log(typeof(min_sum) , " " ,cart_totals);
-                //         if(cart_totals < min_sum || min_sum === 0){
-                //             if(cart_totals !== 0){
-                //             min_sum = cart_totals;
-                //             cheapest_supplier = key;
-                //             }
-                //         }
-                //             if (cart_totals !== 0){
-                //               joined = val.join('\n');
-                           
-                //             full_report = full_report.concat("\n\n"+key+"\n" + joined);
+                    var displayInfo = sales_map.keys();
+                    
+                    for (var [key, val] of sales_map){
+                        var joined = '';
+                        cart_totals = val[7];
+                        
+                        if(cart_totals < min_sum || min_sum === 0){
+                            if(cart_totals !== 0){
+                            min_sum = cart_totals;
+                            cheapest_supplier = key;
+                            
+                            }
+                        }
+                            if (cart_totals !== 0){
+                              joined = val.join('\n');
+                            full_report = full_report.concat("\n\n"+key+"\n" + joined);
                              
-                //         }
-                //     }
-                //     // order_details(full_report, cheapest_supplier);
-                //     if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
-                // });
-                
-                // $('.submitBtn2').click(()=>{
-                //     var displayInfo = sales_map.keys();
-                //     for (var [key, val] of sales_map){
-                //         var joined = '';
-                //         cart_totals = val[7];
-                //         console.log(typeof(min_sum) , " " ,cart_totals);
-                //         if(cart_totals < min_sum || min_sum === 0){
-                //             if(cart_totals !== 0){
-                //             min_sum = cart_totals;
-                //             cheapest_supplier = key;
-                //             }
-                //         }
-                //             if (cart_totals !== 0){
-                //                 joined = val.join('\n');
-                //                 full_report = full_report.concat("\n\n"+key+"\n" + joined);
-                //         }
-                //     }
-                //     // order_details(full_report, cheapest_supplier);
-                //     if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- " + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
-                // });
-                   
-                // console.log("this is the values of big cheese:" , sales_map.values());
+                        }
+                    }
                     
+                    if ((min_sum > max_order) ? alert("Your order from " + cheapest_supplier + " is pending.") :  alert("----------- Big Cheese Report ----------- \n" + full_report + "\n\nThe best supplier is: " + cheapest_supplier + " for a total cost of $" + min_sum));
+                    <?php 
+                    $submit = "<script> document.write(cheapest_supplier);</script>";
+                    $myFile = fopen('total.txt', "a");
+                    fwrite($myFile, $submit);
+
+                    ?>
+                    
+                    
+                });
                    
+                console.log("this is the values of big cheese:" , sales_map.values());
 
-                //     $('.submitBtn').click(()=>{
-                //         if ( roundedTotal >= 5000){
-                //             alert('Order is pending');
-                //         }
-                //     });
-                // });
-
-                // function order_details(full_report, cheapest_supplier) {
-
-                //     var separateLines = full_report.split(/\r?\n/);
-
-                //     const results = separateLines.filter(element => {
-                //         return element !== '';
-                //     });
-                //     console.log(results);
-
-                //     var length = results.length/9;
-                //     var product_names[];
-                //     var product_pr[]
-
-                //     for (let index = 0; index < length; index++) {
-                        
-                //         if (results[index * 9] === cheapest_supplier) {
-
-                //             for (let index1 = index; index1 < 9; index1++) {
-                                
-                                
-                //             }
-                //         }
-                        
-                //     }
-                // };
+  
+                });
             </script>
+            
+              
+
         </section>
             
         <?php

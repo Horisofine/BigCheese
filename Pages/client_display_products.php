@@ -78,8 +78,10 @@
             </table>
             <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
-                    <b class="cart-total<?php echo $table_number?>">0.00$</b>
-                    <button class ="submitBtn<?php echo $table_number?>" type="submit" name="order_submit">Submit</button>
+                    <form method = "GET">
+                    <input name = "total<?php echo $table_number?>" class="cart-total<?php echo $table_number?>" value = "0.00$" readonly></input>
+                    </form>
+                    <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
                 </div>
         </form>
         <?php
