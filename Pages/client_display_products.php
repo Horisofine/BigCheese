@@ -20,7 +20,7 @@
 
             if ($resultCheck2 > 0) : // Checking if number of products is > 0
                 ?>
-                    <form method="post" >
+                    <form method="post" action="includes/Order_total.inc.php">
                     <table class="itemTable<?php echo $table_number?>">
                     <tr>
                         <th id = "supplier" >Supplier Name</th>
@@ -78,12 +78,12 @@
             </table>
             <div class="total-section row">
                     <header class="cart-header">Total<i class="fa-solid fa-cart-shopping"></i></header>
-                    <form method = "GET">
+                    <!-- <form method = "GET"> -->
                     <input name = "total<?php echo $table_number?>" class="cart-total<?php echo $table_number?>" value = "0.00$" readonly></input>
-                    </form>
+                    <!-- </form> -->
                     <button class ="submitBtn" type="submit" name="order_submit">Submit</button>
                 </div>
-        </form>
+            </form>
         <?php
         $table_number++;
         endwhile;

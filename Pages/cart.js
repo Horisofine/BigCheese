@@ -25,21 +25,11 @@ $(document).ready(function() {
                 itemName = $(this).html();
                 console.log($(itemName));
             });
-            
-
-
-
 
         }); 
         
         $('.cart-total').text('');
         $('.cart-total').text(roundedTotal+'$');
-        
-
-
-
-
-
 
     });
 

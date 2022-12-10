@@ -12,7 +12,7 @@
 
         $order_total = 0;
         for ($i=0; $i < count($product_name); $i++) {
-            $order_total += ($product_quantity[$i] * $product_price[$i]);
+            $order_total += ((int)$product_quantity[$i] * (int)$product_price[$i]);
         }
 
         $sql1 = "INSERT INTO orders (client_id, order_date, order_total) VALUES (?, ?, ?);";
@@ -24,7 +24,7 @@
         }
         
         $clientID = $_SESSION["client_id"];
-        $today = date("j-m-y");
+        $today = date("j-m-Y");
 
         mysqli_stmt_bind_param($stmt, "sss",  $clientID, $today, $order_total);
         mysqli_stmt_execute($stmt);
